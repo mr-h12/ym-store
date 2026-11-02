@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Y.M Store: online clothing store demo
 
-## Getting Started
+A demo storefront for **Y.M Store** ([Instagram @y_m_storee](https://www.instagram.com/y_m_storee)). It's built with
+Next.js 15 (App Router), React 19, TypeScript and Tailwind CSS v4.
 
-First, run the development server:
+The design draws on a survey of 18 leading fashion stores and published e-commerce UX research. The design rules come from the
+UI/UX notes in [`docs/uiux-notes.md`](docs/uiux-notes.md):
+- one main action per screen
+- one flat accent colour
+- the next card peeks in carousels
+- a connected checkout stepper
+- 16px inputs
+- 44px touch targets
+- no horizontal scroll at 375px
+
+![Mobile preview](docs/screenshots/preview-mobile.png)
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Route | What it does |
+|---|---|
+| `/` | Hero with one call to action, 6 category tiles, "New in" carousel, inline delivery and returns info, popular items |
+| `/shop`, `/shop/[category]` | Sticky filter bar (size first, colour, fit, price, on sale), sort, removable filter chips; filters are kept in the URL |
+| `/product/[slug]` | Gallery, colour and size buttons, size guide dialog, Add to bag, Order on WhatsApp, delivery date, sticky add bar on mobile |
+| Bag drawer | Free-delivery progress, quantity controls, totals, Checkout or WhatsApp |
+| `/checkout` | Guest checkout with 8 fields or fewer and cash on delivery. "Place order" sends the order to the store on WhatsApp with an order number |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Swap in the real store data
 
-## Learn More
+Everything below is a **placeholder**: products, prices (EGP), city list, WhatsApp number and delivery rules.
 
-To learn more about Next.js, take a look at the following resources:
+- `lib/store-config.ts`: name, WhatsApp number, currency and locale, LTR or RTL, delivery fee and free-delivery threshold, returns window
+- `data/products.ts`: categories and products (sizes and stock, colours, fit, material)
+- `public/products/`: product photos. Add their paths to a product's `images` array. Products without photos show a drawn garment shape
+- `lib/delivery.ts`: working days for delivery estimates
+- `components/checkout/fields.ts`: city list and payment options
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The layout uses logical CSS properties, so setting `dir: "rtl"` mirrors it for Arabic. The text is not translated yet.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Research
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [`research/fashion-ecommerce-survey.md`](research/fashion-ecommerce-survey.md): combined ranking and the patterns we adopted
+- [`research/a-browse.md`](research/a-browse.md), [`research/b-pdp-checkout.md`](research/b-pdp-checkout.md) and
+  [`research/c-evidence.md`](research/c-evidence.md): the detailed reports with sources
+- [`docs/screenshots/`](docs/screenshots/): every page at 375px and 1280px
