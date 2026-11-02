@@ -34,11 +34,15 @@ export function ProductCard({ product, priority = false }: { product: Product; p
             </span>
           )}
         </div>
-        <div className="mt-2.5 flex items-start justify-between gap-3">
+        <div className="mt-2.5 min-w-0">
           <h3 className="text-sm leading-snug">{product.name}</h3>
-          <p className="price text-sm font-semibold">
-            {onSale && <span className="me-1.5 font-normal text-muted line-through">{formatPrice(product.compareAt!)}</span>}
-            <span className={onSale ? "text-sale" : ""}>{formatPrice(product.price)}</span>
+          <p className="mt-0.5 flex flex-wrap items-baseline gap-x-1.5 text-sm font-semibold">
+            <span className={`price ${onSale ? "text-sale" : ""}`}>{formatPrice(product.price)}</span>
+            {onSale && (
+              <span className="price text-xs font-normal text-muted line-through">
+                <span className="sr-only">Was </span>{formatPrice(product.compareAt!)}
+              </span>
+            )}
           </p>
         </div>
       </Link>
