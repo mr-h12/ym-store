@@ -187,7 +187,7 @@ export function Checkout() {
                 footer={
                   <ActionBar>
                     <button type="button" onClick={place} className="btn btn-primary w-full">
-                      Place order · <span className="price">{formatPrice(total)}</span>
+                      Place order{total > 0 && <> · <span className="price">{formatPrice(total)}</span></>}
                     </button>
                     <p className="mt-2 text-center text-xs text-muted">
                       Opens WhatsApp with your order — tap send so we receive it.

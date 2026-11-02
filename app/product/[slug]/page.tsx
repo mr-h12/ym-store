@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCategory, getProduct, products } from "@/data/products";
-import { formatPrice } from "@/lib/format";
 import { ProductView } from "@/components/product/ProductView";
 import { ProductDetails } from "@/components/product/ProductDetails";
 import { RelatedRail } from "@/components/product/RelatedRail";
@@ -19,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params;
   const product = getProduct(slug);
   if (!product) return { title: "Product not found" };
-  const desc = `${product.description} ${formatPrice(product.price)}. Cash on delivery available.`;
+  const desc = product.description;
   return {
     title: product.name,
     description: desc,
@@ -36,7 +35,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
   const others = products.filter((p) => p.id !== product.id);
   const related = [
     ...others.filter((p) => p.category === product.category),
-    ...others.filter((p) => p.category !== product.category).sort((a, b) => b.popularity - a.popularity),
+    ...others.filter((p) => p.category !== product.category).sort((a, b) => b.addedAt.localeCompare(a.addedAt)),
   ].slice(0, 8);
 
   return (

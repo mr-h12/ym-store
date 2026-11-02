@@ -16,8 +16,6 @@ interface CartState {
   subtotal: number;
   shipping: number;
   total: number;
-  /** How much more to spend for free delivery (0 when reached). */
-  toFreeShipping: number;
   add: (productId: string, size: Size, colour: string, qty?: number) => void;
   setQty: (productId: string, size: Size, colour: string, qty: number) => void;
   remove: (productId: string, size: Size, colour: string) => void;
@@ -101,15 +99,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       return product ? [{ ...l, product, lineTotal: product.price * l.qty }] : [];
     });
     const subtotal = lines.reduce((s, l) => s + l.lineTotal, 0);
-    const free = subtotal >= storeConfig.freeShippingThreshold;
-    const shipping = subtotal === 0 || free ? 0 : storeConfig.shippingFee;
+    const shipping = subtotal === 0 ? 0 : storeConfig.shippingFee;
     return {
       lines,
       count: lines.reduce((s, l) => s + l.qty, 0),
       subtotal,
       shipping,
       total: subtotal + shipping,
-      toFreeShipping: free ? 0 : storeConfig.freeShippingThreshold - subtotal,
       add,
       setQty,
       remove,

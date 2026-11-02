@@ -38,7 +38,7 @@ export function ShopView({ category }: { category?: CategorySlug }) {
   const base = useMemo(() => (category ? productsIn(category) : products), [category]);
   const results = useMemo(() => sortProducts(applyFilters(base, filters), sort), [base, filters, sort]);
   const chips = appliedChips(filters);
-  const title = category ? getCategory(category)!.name : "All clothing";
+  const title = category ? getCategory(category)!.name : "All products";
   const query = searchParams.toString();
 
   const replace = (next: URLSearchParams) => {
@@ -48,7 +48,7 @@ export function ShopView({ category }: { category?: CategorySlug }) {
   const setFilters = (f: FilterState) => replace(writeFilters(new URLSearchParams(searchParams), f));
   const setSort = (s: SortKey) => {
     const next = new URLSearchParams(searchParams);
-    if (s === "popular") next.delete("sort");
+    if (s === "newest") next.delete("sort");
     else next.set("sort", s);
     replace(next);
   };
@@ -56,7 +56,7 @@ export function ShopView({ category }: { category?: CategorySlug }) {
   return (
     <div className="mx-auto max-w-7xl px-4 pb-16 md:px-6">
       <div className="flex items-baseline gap-3 pt-6 md:pt-10">
-        <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">{title}</h1>
+        <h1 className="display text-2xl font-semibold md:text-3xl">{title}</h1>
         <p className="text-sm text-muted" aria-live="polite">
           {itemsLabel(results.length)}
         </p>
@@ -200,8 +200,8 @@ export function ShopFallback({ category, sort }: { category?: CategorySlug; sort
   return (
     <div className="mx-auto max-w-7xl px-4 pb-16 md:px-6">
       <div className="flex items-baseline gap-3 pt-6 md:pt-10">
-        <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">
-          {category ? getCategory(category)!.name : "All clothing"}
+        <h1 className="display text-2xl font-semibold md:text-3xl">
+          {category ? getCategory(category)!.name : "All products"}
         </h1>
         <p className="text-sm text-muted">{itemsLabel(items.length)}</p>
       </div>

@@ -41,13 +41,18 @@ export function buildOrderMessage(
   out.push("");
   lines.forEach((l, i) => {
     out.push(
-      `${i + 1}. ${l.product.name} · ${l.colour} · ${l.size} × ${l.qty} = ${formatPrice(l.product.price * l.qty)}`,
+      `${i + 1}. ${l.product.name} · ${l.colour} · ${l.size} × ${l.qty}${l.product.price ? ` = ${formatPrice(l.product.price * l.qty)}` : ""}`,
     );
   });
-  out.push("");
-  out.push(`Subtotal: ${formatPrice(totals.subtotal)}`);
-  out.push(`Delivery: ${totals.shipping === 0 ? "Free" : formatPrice(totals.shipping)}`);
-  out.push(`*Total: ${formatPrice(totals.total)}*`);
+  if (totals.subtotal > 0) {
+    out.push("");
+    out.push(`Subtotal: ${formatPrice(totals.subtotal)}`);
+    out.push(`Delivery: ${totals.shipping === 0 ? "to confirm" : formatPrice(totals.shipping)}`);
+    out.push(`*Total: ${formatPrice(totals.total)}*`);
+  } else {
+    out.push("");
+    out.push("Please confirm the price and delivery.");
+  }
 
   if (customer) {
     const address = [customer.street, customer.apartment, customer.area, customer.city]

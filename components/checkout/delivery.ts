@@ -1,7 +1,4 @@
-import { addWorkingDays, DELIVERY_MAX_DAYS, DELIVERY_MIN_DAYS } from "@/lib/delivery";
-
-const fmt = new Intl.DateTimeFormat("en-GB", { weekday: "short", day: "numeric", month: "short" });
-
-export function deliveryRange(from = new Date()): string {
-  return `${fmt.format(addWorkingDays(from, DELIVERY_MIN_DAYS))} – ${fmt.format(addWorkingDays(from, DELIVERY_MAX_DAYS))}`;
+/** Delivery promise from the store's posts. Other governorates' timing is confirmed on WhatsApp. */
+export function deliveryRange(): string {
+  return "the same day in Alexandria (other governorates: we confirm timing on WhatsApp)";
 }

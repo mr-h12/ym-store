@@ -24,7 +24,7 @@ export function ProductView({
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:gap-x-10 lg:gap-x-14">
       <div className="md:col-start-1 md:row-start-1">
-        <ProductGallery name={product.name} shape={shape} colour={colour} images={product.images} />
+        <ProductGallery name={product.name} shape={shape} colour={colour} images={colour.images} />
       </div>
       <div className="md:col-start-2 md:row-span-2 md:row-start-1">
         <div className="md:sticky md:top-24">

@@ -1,0 +1,1410 @@
+[
+ {
+  "slug": "philipp-plein-zip-hoodie",
+  "name": "Philipp Plein Zip Hoodie",
+  "brand": "Philipp Plein",
+  "type": "zip hoodie",
+  "category": "hoodies",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-01-06_DTL0DazDDTy_2.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-01-06_DTL0DazDDTy_3.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-01-06",
+  "instagram": "https://www.instagram.com/p/DTL0DazDDTy/"
+ },
+ {
+  "slug": "balmain-zip-hoodie",
+  "name": "Balmain Zip Hoodie",
+  "brand": "Balmain",
+  "type": "zip hoodie",
+  "category": "hoodies",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-01-06_DTL0H7FDMnz_1.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-01-06_DTL0H7FDMnz_3.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-01-06",
+  "instagram": "https://www.instagram.com/p/DTL0H7FDMnz/"
+ },
+ {
+  "slug": "nike-tech-fleece-tracksuit",
+  "name": "Nike Tech Fleece Tracksuit",
+  "brand": "Nike",
+  "type": "tech fleece tracksuit",
+  "category": "tracksuits",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-01-06_DTL0TvrjA2v_7.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-01-06",
+  "instagram": "https://www.instagram.com/p/DTL0TvrjA2v/"
+ },
+ {
+  "slug": "emporio-armani-hoodie",
+  "name": "Emporio Armani Hoodie",
+  "brand": "Emporio Armani",
+  "type": "hoodie",
+  "category": "hoodies",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-01-06_DTLz0xSDN4U_1.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-01-06_DTLz0xSDN4U_3.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-01-06",
+  "instagram": "https://www.instagram.com/p/DTLz0xSDN4U/"
+ },
+ {
+  "slug": "calvin-klein-zip-hoodie",
+  "name": "Calvin Klein Zip Hoodie",
+  "brand": "Calvin Klein",
+  "type": "zip hoodie",
+  "category": "hoodies",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-01-06_DTLz9tKDAMj_2.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-01-06_DTLz9tKDAMj_4.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-01-06",
+  "instagram": "https://www.instagram.com/p/DTLz9tKDAMj/"
+ },
+ {
+  "slug": "boss-hoodie",
+  "name": "Boss Hoodie",
+  "brand": "Boss",
+  "type": "hoodie",
+  "category": "hoodies",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-01-06_DTLzwl-jOVG_2.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-01-06_DTLzwl-jOVG_3.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-01-06",
+  "instagram": "https://www.instagram.com/p/DTLzwl-jOVG/"
+ },
+ {
+  "slug": "balmain-track-jacket",
+  "name": "Balmain Track Jacket",
+  "brand": "Balmain",
+  "type": "track jacket",
+  "category": "tracksuits",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-01-16_DTjH_rTjI0d_1.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-01-16_DTjH_rTjI0d_4.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-01-16",
+  "instagram": "https://www.instagram.com/p/DTjH_rTjI0d/"
+ },
+ {
+  "slug": "balmain-track-pants",
+  "name": "Balmain Track Pants",
+  "brand": "Balmain",
+  "type": "track pants",
+  "category": "tracksuits",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-01-24_DT5l03ijO-t_1.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-01-24",
+  "instagram": "https://www.instagram.com/p/DT5l03ijO-t/"
+ },
+ {
+  "slug": "philipp-plein-track-pants",
+  "name": "Philipp Plein Track Pants",
+  "brand": "Philipp Plein",
+  "type": "track pants",
+  "category": "tracksuits",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-01-24_DT5l03ijO-t_5.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-01-24",
+  "instagram": "https://www.instagram.com/p/DT5l03ijO-t/"
+ },
+ {
+  "slug": "dolce-gabbana-track-pants",
+  "name": "Dolce & Gabbana Track Pants",
+  "brand": "Dolce & Gabbana",
+  "type": "track pants",
+  "category": "tracksuits",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-01-24_DT5l03ijO-t_6.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-01-24",
+  "instagram": "https://www.instagram.com/p/DT5l03ijO-t/"
+ },
+ {
+  "slug": "dolce-gabbana-cargo-track-pants",
+  "name": "Dolce & Gabbana Cargo Track Pants",
+  "brand": "Dolce & Gabbana",
+  "type": "cargo track pants",
+  "category": "tracksuits",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-01-24_DT5l03ijO-t_8.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-01-24",
+  "instagram": "https://www.instagram.com/p/DT5l03ijO-t/"
+ },
+ {
+  "slug": "balmain-hoodie",
+  "name": "Balmain Hoodie",
+  "brand": "Balmain",
+  "type": "hoodie",
+  "category": "hoodies",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-01-28_DUB7wq7DDjb_1.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-01-28_DUB7wq7DDjb_6.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-01-28",
+  "instagram": "https://www.instagram.com/p/DUB7wq7DDjb/"
+ },
+ {
+  "slug": "balmain-hoodie-2",
+  "name": "Balmain Hoodie",
+  "brand": "Balmain",
+  "type": "hoodie",
+  "category": "hoodies",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-01-28_DUB9UM6jFKM_2.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-01-28_DUB9UM6jFKM_4.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-01-28",
+  "instagram": "https://www.instagram.com/p/DUB9UM6jFKM/"
+ },
+ {
+  "slug": "calvin-klein-jeans-t-shirt",
+  "name": "Calvin Klein Jeans T-Shirt",
+  "brand": "Calvin Klein Jeans",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Red",
+    "hex": "#b3261e",
+    "images": [
+     "/products/2026-04-21_DXZ0c81jPZY_1.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-04-21_DXZ0c81jPZY_4.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-04-21_DXZ0c81jPZY_6.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-04-21",
+  "instagram": "https://www.instagram.com/p/DXZ0c81jPZY/"
+ },
+ {
+  "slug": "calvin-klein-t-shirt",
+  "name": "Calvin Klein T-Shirt",
+  "brand": "Calvin Klein",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Blue",
+    "hex": "#2f5fa7",
+    "images": [
+     "/products/2026-04-21_DXZ0ouCDBCs_1.jpg"
+    ]
+   },
+   {
+    "name": "White/blue",
+    "hex": "linear-gradient(135deg, #f4f4f2 50%, #2f5fa7 50%)",
+    "images": [
+     "/products/2026-04-21_DXZ0ouCDBCs_3.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-04-21",
+  "instagram": "https://www.instagram.com/p/DXZ0ouCDBCs/"
+ },
+ {
+  "slug": "balmain-t-shirt",
+  "name": "Balmain T-Shirt",
+  "brand": "Balmain",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-04-21_DXZxsaBjPev_1.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-04-21_DXZxsaBjPev_6.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-04-21",
+  "instagram": "https://www.instagram.com/p/DXZxsaBjPev/"
+ },
+ {
+  "slug": "philipp-plein-t-shirt",
+  "name": "Philipp Plein T-Shirt",
+  "brand": "Philipp Plein",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-05-02_DX1pMJbDF46_1.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-05-02_DX1pMJbDF46_4.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-05-02",
+  "instagram": "https://www.instagram.com/p/DX1pMJbDF46/"
+ },
+ {
+  "slug": "balmain-t-shirt-2",
+  "name": "Balmain T-Shirt",
+  "brand": "Balmain",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-05-02_DX1pTgLjMn8_1.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-05-02",
+  "instagram": "https://www.instagram.com/p/DX1pTgLjMn8/"
+ },
+ {
+  "slug": "balmain-t-shirt-3",
+  "name": "Balmain T-Shirt",
+  "brand": "Balmain",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-05-02_DX1pW_QjNXs_1.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-05-02_DX1pW_QjNXs_3.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-05-02",
+  "instagram": "https://www.instagram.com/p/DX1pW_QjNXs/"
+ },
+ {
+  "slug": "valentino-t-shirt",
+  "name": "Valentino T-Shirt",
+  "brand": "Valentino",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-05-02_DX1pb-tDM5t_2.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-05-02_DX1pb-tDM5t_5.jpg",
+     "/products/2026-05-02_DX1pb-tDM5t_6.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-05-02",
+  "instagram": "https://www.instagram.com/p/DX1pb-tDM5t/"
+ },
+ {
+  "slug": "balmain-t-shirt-4",
+  "name": "Balmain T-Shirt",
+  "brand": "Balmain",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-05-02_DX1pdXdDJSZ_3.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-05-02_DX1pdXdDJSZ_4.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-05-02",
+  "instagram": "https://www.instagram.com/p/DX1pdXdDJSZ/"
+ },
+ {
+  "slug": "kenzo-t-shirt",
+  "name": "Kenzo T-Shirt",
+  "brand": "Kenzo",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-05-02_DX1plsVjCX8_1.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-05-02_DX1plsVjCX8_5.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-05-02",
+  "instagram": "https://www.instagram.com/p/DX1plsVjCX8/"
+ },
+ {
+  "slug": "checkerboard-swim-shorts",
+  "name": "Checkerboard Swim Shorts",
+  "brand": "",
+  "type": "swim shorts",
+  "category": "swim",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Mint Checkerboard",
+    "hex": "repeating-conic-gradient(#a8dcc5 0 25%, #f4f4f2 0 50%) 0 0 / 50% 50%",
+    "images": [
+     "/products/2026-06-08_DZU_PLaDIK__1.jpg"
+    ]
+   },
+   {
+    "name": "Green Checkerboard",
+    "hex": "repeating-conic-gradient(#2e6b3f 0 25%, #f4f4f2 0 50%) 0 0 / 50% 50%",
+    "images": [
+     "/products/2026-06-08_DZU_PLaDIK__2.jpg"
+    ]
+   },
+   {
+    "name": "Red Checkerboard",
+    "hex": "repeating-conic-gradient(#b3261e 0 25%, #f4f4f2 0 50%) 0 0 / 50% 50%",
+    "images": [
+     "/products/2026-06-08_DZU_PLaDIK__3.jpg"
+    ]
+   },
+   {
+    "name": "Black Checkerboard",
+    "hex": "repeating-conic-gradient(#141414 0 25%, #f4f4f2 0 50%) 0 0 / 50% 50%",
+    "images": [
+     "/products/2026-06-08_DZU_PLaDIK__4.jpg"
+    ]
+   },
+   {
+    "name": "Brown Checkerboard",
+    "hex": "repeating-conic-gradient(#6b4a33 0 25%, #f4f4f2 0 50%) 0 0 / 50% 50%",
+    "images": [
+     "/products/2026-06-08_DZU_PLaDIK__5.jpg"
+    ]
+   },
+   {
+    "name": "Beige Checkerboard",
+    "hex": "repeating-conic-gradient(#d8c7a6 0 25%, #f4f4f2 0 50%) 0 0 / 50% 50%",
+    "images": [
+     "/products/2026-06-08_DZU_PLaDIK__6.jpg"
+    ]
+   },
+   {
+    "name": "White Checkerboard",
+    "hex": "repeating-conic-gradient(#f4f4f2 0 25%, #f4f4f2 0 50%) 0 0 / 50% 50%",
+    "images": [
+     "/products/2026-06-08_DZU_PLaDIK__7.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-08",
+  "instagram": "https://www.instagram.com/p/DZU_PLaDIK_/"
+ },
+ {
+  "slug": "swim-shorts",
+  "name": "Swim Shorts",
+  "brand": "",
+  "type": "swim shorts",
+  "category": "swim",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Lime",
+    "hex": "#b5d334",
+    "images": [
+     "/products/2026-06-08_DZU_U40jDpD_1.jpg"
+    ]
+   },
+   {
+    "name": "Green",
+    "hex": "#2e6b3f",
+    "images": [
+     "/products/2026-06-08_DZU_U40jDpD_2.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-06-08_DZU_U40jDpD_3.jpg"
+    ]
+   },
+   {
+    "name": "Tan",
+    "hex": "#c19a6b",
+    "images": [
+     "/products/2026-06-08_DZU_U40jDpD_4.jpg"
+    ]
+   },
+   {
+    "name": "Lilac",
+    "hex": "#b9a2d6",
+    "images": [
+     "/products/2026-06-08_DZU_U40jDpD_5.jpg"
+    ]
+   },
+   {
+    "name": "Beige",
+    "hex": "#d8c7a6",
+    "images": [
+     "/products/2026-06-08_DZU_U40jDpD_6.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-08",
+  "instagram": "https://www.instagram.com/p/DZU_U40jDpD/"
+ },
+ {
+  "slug": "emporio-armani-swim-shorts",
+  "name": "Emporio Armani Swim Shorts",
+  "brand": "Emporio Armani",
+  "type": "swim shorts",
+  "category": "swim",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Blue",
+    "hex": "#2f5fa7",
+    "images": [
+     "/products/2026-06-08_DZU_i_8DGvv_1.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-06-08_DZU_i_8DGvv_2.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-06-08_DZU_i_8DGvv_3.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-08",
+  "instagram": "https://www.instagram.com/p/DZU_i_8DGvv/"
+ },
+ {
+  "slug": "calvin-klein-swim-shorts",
+  "name": "Calvin Klein Swim Shorts",
+  "brand": "Calvin Klein",
+  "type": "swim shorts",
+  "category": "swim",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-06-08_DZVMiA7DMtG_1.jpg"
+    ]
+   },
+   {
+    "name": "Blue",
+    "hex": "#2f5fa7",
+    "images": [
+     "/products/2026-06-08_DZVMiA7DMtG_2.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-08",
+  "instagram": "https://www.instagram.com/p/DZVMiA7DMtG/"
+ },
+ {
+  "slug": "shorts",
+  "name": "Shorts",
+  "brand": "",
+  "type": "shorts",
+  "category": "swim",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Beige",
+    "hex": "#d8c7a6",
+    "images": [
+     "/products/2026-06-08_DZVMiA7DMtG_3.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-08",
+  "instagram": "https://www.instagram.com/p/DZVMiA7DMtG/"
+ },
+ {
+  "slug": "zara-tank-top",
+  "name": "Zara Tank Top",
+  "brand": "Zara",
+  "type": "tank top",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-06-08_DZVNEbeDLUz_1.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-08",
+  "instagram": "https://www.instagram.com/p/DZVNEbeDLUz/"
+ },
+ {
+  "slug": "moncler-t-shirt",
+  "name": "Moncler T-Shirt",
+  "brand": "Moncler",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Red",
+    "hex": "#b3261e",
+    "images": [
+     "/products/2026-06-12_DZfW7AtjEl1_1.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-06-12_DZfW7AtjEl1_5.jpg"
+    ]
+   },
+   {
+    "name": "Blue",
+    "hex": "#2f5fa7",
+    "images": [
+     "/products/2026-06-12_DZfW7AtjEl1_7.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-12",
+  "instagram": "https://www.instagram.com/p/DZfW7AtjEl1/"
+ },
+ {
+  "slug": "hermes-t-shirt",
+  "name": "Hermes T-Shirt",
+  "brand": "Hermes",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-06-13_DZiDumVjLBf_1.jpg"
+    ]
+   },
+   {
+    "name": "Brown",
+    "hex": "#6b4a33",
+    "images": [
+     "/products/2026-06-13_DZiDumVjLBf_5.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-06-13_DZiDumVjLBf_9.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-13",
+  "instagram": "https://www.instagram.com/p/DZiDumVjLBf/"
+ },
+ {
+  "slug": "calvin-klein-t-shirt-2",
+  "name": "Calvin Klein T-Shirt",
+  "brand": "Calvin Klein",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-06-13_DZiEF1AjLbS_1.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-06-13_DZiEF1AjLbS_3.jpg"
+    ]
+   },
+   {
+    "name": "Plum",
+    "hex": "#5e2a4a",
+    "images": [
+     "/products/2026-06-13_DZiEF1AjLbS_5.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-13",
+  "instagram": "https://www.instagram.com/p/DZiEF1AjLbS/"
+ },
+ {
+  "slug": "burberry-t-shirt",
+  "name": "Burberry T-Shirt",
+  "brand": "Burberry",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Plum",
+    "hex": "#5e2a4a",
+    "images": [
+     "/products/2026-06-13_DZiEFrWDHet_1.jpg",
+     "/products/2026-06-13_DZiEFrWDHet_4.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-06-13_DZiEFrWDHet_7.jpg",
+     "/products/2026-06-13_DZiEFrWDHet_10.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-13",
+  "instagram": "https://www.instagram.com/p/DZiEFrWDHet/"
+ },
+ {
+  "slug": "fendi-t-shirt",
+  "name": "Fendi T-Shirt",
+  "brand": "Fendi",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black/white",
+    "hex": "linear-gradient(135deg, #141414 50%, #f4f4f2 50%)",
+    "images": [
+     "/products/2026-06-15_DZnVhv8jEFQ_1.jpg"
+    ]
+   },
+   {
+    "name": "White/black",
+    "hex": "linear-gradient(135deg, #f4f4f2 50%, #141414 50%)",
+    "images": [
+     "/products/2026-06-15_DZnVhv8jEFQ_3.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-15",
+  "instagram": "https://www.instagram.com/p/DZnVhv8jEFQ/"
+ },
+ {
+  "slug": "casablanca-polo",
+  "name": "Casablanca Polo",
+  "brand": "Casablanca",
+  "type": "polo",
+  "category": "polos",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-06-20_DZ0DlUJDBLb_1.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-06-20_DZ0DlUJDBLb_5.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-20",
+  "instagram": "https://www.instagram.com/p/DZ0DlUJDBLb/"
+ },
+ {
+  "slug": "hermes-polo",
+  "name": "Hermes Polo",
+  "brand": "Hermes",
+  "type": "polo",
+  "category": "polos",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-06-20_DZ0IB-uDFyY_1.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-06-20_DZ0IB-uDFyY_4.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-20",
+  "instagram": "https://www.instagram.com/p/DZ0IB-uDFyY/"
+ },
+ {
+  "slug": "louis-vuitton-polo",
+  "name": "Louis Vuitton Polo",
+  "brand": "Louis Vuitton",
+  "type": "polo",
+  "category": "polos",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-06-20_DZ0IY58DBMH_2.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-06-20",
+  "instagram": "https://www.instagram.com/p/DZ0IY58DBMH/"
+ },
+ {
+  "slug": "ea7-t-shirt",
+  "name": "EA7 T-Shirt",
+  "brand": "EA7",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-07-06_Dadf80HDI32_3.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-07-06",
+  "instagram": "https://www.instagram.com/p/Dadf80HDI32/"
+ },
+ {
+  "slug": "dsquared2-t-shirt",
+  "name": "Dsquared2 T-Shirt",
+  "brand": "Dsquared2",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Red",
+    "hex": "#b3261e",
+    "images": [
+     "/products/2026-07-06_DadgL6SjJi5_8.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-07-06",
+  "instagram": "https://www.instagram.com/p/DadgL6SjJi5/"
+ },
+ {
+  "slug": "burberry-t-shirt-2",
+  "name": "Burberry T-Shirt",
+  "brand": "Burberry",
+  "type": "t-shirt",
+  "category": "t-shirts",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White/blue",
+    "hex": "linear-gradient(135deg, #f4f4f2 50%, #2f5fa7 50%)",
+    "images": [
+     "/products/2026-07-06_DadgRGajC4e_1.jpg"
+    ]
+   },
+   {
+    "name": "Black/blue",
+    "hex": "linear-gradient(135deg, #141414 50%, #2f5fa7 50%)",
+    "images": [
+     "/products/2026-07-06_DadgRGajC4e_7.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-07-06",
+  "instagram": "https://www.instagram.com/p/DadgRGajC4e/"
+ },
+ {
+  "slug": "balmain-long-sleeve-tee",
+  "name": "Balmain Long-sleeve Tee",
+  "brand": "Balmain",
+  "type": "long-sleeve tee",
+  "category": "long-sleeves",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-09-22_Ddmg7C6DAJd_1.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-09-22",
+  "instagram": "https://www.instagram.com/p/Ddmg7C6DAJd/"
+ },
+ {
+  "slug": "armani-exchange-long-sleeve-tee",
+  "name": "Armani Exchange Long-sleeve Tee",
+  "brand": "Armani Exchange",
+  "type": "long-sleeve tee",
+  "category": "long-sleeves",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-09-22_Ddmgy3RjMeI_4.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-09-22_Ddmgy3RjMeI_6.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-09-22",
+  "instagram": "https://www.instagram.com/p/Ddmgy3RjMeI/"
+ },
+ {
+  "slug": "hugo-long-sleeve-tee",
+  "name": "Hugo Long-sleeve Tee",
+  "brand": "Hugo",
+  "type": "long-sleeve tee",
+  "category": "long-sleeves",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-09-22_DdmhA3dDP1Y_1.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-09-22",
+  "instagram": "https://www.instagram.com/p/DdmhA3dDP1Y/"
+ },
+ {
+  "slug": "hermes-long-sleeve-tee",
+  "name": "Hermes Long-sleeve Tee",
+  "brand": "Hermes",
+  "type": "long-sleeve tee",
+  "category": "long-sleeves",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-09-22_DdmhMopjGYA_1.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-09-22_DdmhMopjGYA_3.jpg"
+    ]
+   },
+   {
+    "name": "Green",
+    "hex": "#2e6b3f",
+    "images": [
+     "/products/2026-09-22_DdmhMopjGYA_5.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-09-22",
+  "instagram": "https://www.instagram.com/p/DdmhMopjGYA/"
+ },
+ {
+  "slug": "emporio-armani-long-sleeve-tee",
+  "name": "Emporio Armani Long-sleeve Tee",
+  "brand": "Emporio Armani",
+  "type": "long-sleeve tee",
+  "category": "long-sleeves",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-09-22_DdmhXfJEWA0_1.jpg"
+    ]
+   },
+   {
+    "name": "Navy",
+    "hex": "#1f2a44",
+    "images": [
+     "/products/2026-09-22_DdmhXfJEWA0_3.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-09-22_DdmhXfJEWA0_6.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-09-22",
+  "instagram": "https://www.instagram.com/p/DdmhXfJEWA0/"
+ },
+ {
+  "slug": "calvin-klein-long-sleeve-tee",
+  "name": "Calvin Klein Long-sleeve Tee",
+  "brand": "Calvin Klein",
+  "type": "long-sleeve tee",
+  "category": "long-sleeves",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Burgundy",
+    "hex": "#6d1a2a",
+    "images": [
+     "/products/2026-09-22_DdmhfxEkVXa_1.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-09-22_DdmhfxEkVXa_3.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-09-22",
+  "instagram": "https://www.instagram.com/p/DdmhfxEkVXa/"
+ },
+ {
+  "slug": "plein-sport-sweatshirt",
+  "name": "Plein Sport Sweatshirt",
+  "brand": "Plein Sport",
+  "type": "sweatshirt",
+  "category": "hoodies",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-10-27_DfAf-J2EZYV_1.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-10-27_DfAf-J2EZYV_2.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-10-27",
+  "instagram": "https://www.instagram.com/p/DfAf-J2EZYV/"
+ },
+ {
+  "slug": "fendi-sweatshirt",
+  "name": "Fendi Sweatshirt",
+  "brand": "Fendi",
+  "type": "sweatshirt",
+  "category": "hoodies",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White/black",
+    "hex": "linear-gradient(135deg, #f4f4f2 50%, #141414 50%)",
+    "images": [
+     "/products/2026-10-27_DfAf2HfESg9_1.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-10-27_DfAf2HfESg9_2.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-10-27",
+  "instagram": "https://www.instagram.com/p/DfAf2HfESg9/"
+ },
+ {
+  "slug": "valentino-sweatshirt",
+  "name": "Valentino Sweatshirt",
+  "brand": "Valentino",
+  "type": "sweatshirt",
+  "category": "hoodies",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-10-27_DfAfvQ1keBc_1.jpg"
+    ]
+   },
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-10-27_DfAfvQ1keBc_2.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-10-27",
+  "instagram": "https://www.instagram.com/p/DfAfvQ1keBc/"
+ },
+ {
+  "slug": "lacoste-sweatshirt",
+  "name": "Lacoste Sweatshirt",
+  "brand": "Lacoste",
+  "type": "sweatshirt",
+  "category": "hoodies",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-10-27_DfAgO8-EaVn_1.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-10-27_DfAgO8-EaVn_2.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-10-27",
+  "instagram": "https://www.instagram.com/p/DfAgO8-EaVn/"
+ },
+ {
+  "slug": "emporio-armani-sweatshirt",
+  "name": "Emporio Armani Sweatshirt",
+  "brand": "Emporio Armani",
+  "type": "sweatshirt",
+  "category": "hoodies",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-10-27_DfAgYSgEf0Z_1.jpg"
+    ]
+   },
+   {
+    "name": "White/black",
+    "hex": "linear-gradient(135deg, #f4f4f2 50%, #141414 50%)",
+    "images": [
+     "/products/2026-10-27_DfAgYSgEf0Z_2.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-10-27",
+  "instagram": "https://www.instagram.com/p/DfAgYSgEf0Z/"
+ },
+ {
+  "slug": "jeans",
+  "name": "Jeans",
+  "brand": "",
+  "type": "jeans",
+  "category": "jackets-denim",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Light Blue",
+    "hex": "#a9c4e0",
+    "images": [
+     "/products/2026-10-29_DfFPhTWDD7g_1.jpg",
+     "/products/2026-10-29_DfFPhTWDD7g_2.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-10-29",
+  "instagram": "https://www.instagram.com/p/DfFPhTWDD7g/"
+ },
+ {
+  "slug": "y-3-leather-bomber-jacket",
+  "name": "Y-3 Leather Bomber Jacket",
+  "brand": "Y-3",
+  "type": "leather bomber jacket",
+  "category": "jackets-denim",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-10-30_DfIKK3yx7ox_1.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-10-30",
+  "instagram": "https://www.instagram.com/p/DfIKK3yx7ox/"
+ },
+ {
+  "slug": "jogger-pants",
+  "name": "Jogger Pants",
+  "brand": "",
+  "type": "jogger pants",
+  "category": "tracksuits",
+  "price": 0,
+  "colours": [
+   {
+    "name": "White",
+    "hex": "#f4f4f2",
+    "images": [
+     "/products/2026-10-30_DfIKQtoEddv_1.jpg"
+    ]
+   },
+   {
+    "name": "Black",
+    "hex": "#141414",
+    "images": [
+     "/products/2026-10-30_DfIKQtoEddv_2.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-10-30",
+  "instagram": "https://www.instagram.com/p/DfIKQtoEddv/"
+ },
+ {
+  "slug": "y-3-leather-bomber-jacket-2",
+  "name": "Y-3 Leather Bomber Jacket",
+  "brand": "Y-3",
+  "type": "leather bomber jacket",
+  "category": "jackets-denim",
+  "price": 0,
+  "colours": [
+   {
+    "name": "Brown",
+    "hex": "#6b4a33",
+    "images": [
+     "/products/2026-10-30_DfIKU2GR3pW_1.jpg"
+    ]
+   }
+  ],
+  "addedAt": "2026-10-30",
+  "instagram": "https://www.instagram.com/p/DfIKU2GR3pW/"
+ }
+]

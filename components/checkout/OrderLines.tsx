@@ -1,5 +1,5 @@
 import { ProductImage } from "@/components/ProductImage";
-import { getCategory } from "@/data/products";
+import { getCategory, imageFor } from "@/data/products";
 import { formatPrice } from "@/lib/format";
 import type { ResolvedLine } from "@/components/CartProvider";
 
@@ -13,7 +13,7 @@ export function OrderLines({ lines }: { lines: ResolvedLine[] }) {
         return (
           <li key={`${l.productId}-${l.size}-${l.colour}`} className="flex gap-3 py-3">
             <div className="aspect-[3/4] w-14 shrink-0 overflow-hidden rounded-[var(--radius-badge)] border border-line">
-              <ProductImage shape={shape} colour={hex} name={l.product.name} src={l.product.images[0]} />
+              <ProductImage shape={shape} colour={hex} name={l.product.name} src={imageFor(l.product, l.colour)} />
             </div>
             <div className="min-w-0 flex-1 text-sm">
               <p className="font-medium">{l.product.name}</p>

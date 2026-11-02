@@ -1,18 +1,13 @@
+/** Egypt's governorates; the store ships to all of them. Alexandria first. */
 export const CITIES = [
-  "Cairo",
-  "Giza",
-  "Alexandria",
-  "6th of October",
-  "New Cairo",
-  "Mansoura",
-  "Tanta",
-  "Hurghada",
+  "Alexandria", "Cairo", "Giza", "Beheira", "Kafr El Sheikh", "Gharbia", "Dakahlia", "Damietta", "Sharqia",
+  "Qalyubia", "Monufia", "Port Said", "Ismailia", "Suez", "Faiyum", "Beni Suef", "Minya", "Asyut", "Sohag",
+  "Qena", "Luxor", "Aswan", "Red Sea", "Matrouh", "New Valley", "North Sinai", "South Sinai",
 ] as const;
 
 export const PAYMENTS = [
-  { id: "cod", label: "Cash on delivery", note: "Pay the courier in cash when your order arrives." },
-  { id: "card", label: "Card on delivery", note: "The courier brings a card machine." },
-  { id: "online", label: "Pay online", note: "Coming soon.", disabled: true },
+  { id: "cod", label: "Cash on delivery", note: "Pay in cash when your order arrives." },
+  { id: "card", label: "Visa card", note: "We'll confirm how to pay by card on WhatsApp." },
 ] as const;
 
 export type PaymentId = (typeof PAYMENTS)[number]["id"];

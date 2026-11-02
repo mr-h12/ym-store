@@ -1,20 +1,25 @@
 @import "tailwindcss";
 
 /*
- * Design tokens. Rules from the UI/UX notes:
- * one flat accent (primary action + meaningful state only), no gradients,
- * hairline borders instead of shadows, shadow only on floating UI,
- * radius scales with element size (card 12 / input 8 / badge 6).
+ * Design tokens, taken from the Y&M logo: off-black with brushed-silver.
+ * One flat accent (black) for primary actions; silver only on dark surfaces
+ * (header, hero, footer). Cool grey family throughout, no gradients on UI.
+ * Hairline borders instead of shadows; shadow only on floating UI.
  */
 :root {
-  --bg: #f7f5f1;
+  --bg: #f6f7f8;
   --surface: #ffffff;
-  --surface-2: #efebe4;
-  --ink: #171614;
-  --muted: #6b675f;
-  --line: #e3ded5;
-  --accent: #1f3b2d;        /* deep forest – primary action */
+  --surface-2: #eceef1;
+  --ink: #0d0e10;
+  --muted: #5b616b;
+  --line: #e1e4e8;
+  --accent: #0d0e10;        /* primary action */
   --accent-ink: #ffffff;
+  --night: #0b0c0e;         /* header, hero, footer */
+  --night-2: #17191d;
+  --night-line: #2a2d33;
+  --silver: #c9ced6;        /* text/details on night only (11:1) */
+  --silver-muted: #8d949e;
   --sale: #a33a22;          /* price reductions + errors only */
   --ok: #2f6b45;
   --scrim: rgb(10 10 9 / 0.7);
@@ -29,22 +34,37 @@
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
+  --color-night: var(--night);
+  --color-night-2: var(--night-2);
+  --color-night-line: var(--night-line);
+  --color-silver: var(--silver);
+  --color-silver-muted: var(--silver-muted);
   --color-sale: var(--sale);
   --color-ok: var(--ok);
   --color-scrim: var(--scrim);
-  --font-sans: var(--font-inter);
-  --radius-card: 12px;
-  --radius-input: 8px;
-  --radius-badge: 6px;
-  --shadow-float: 0 12px 32px -8px rgb(0 0 0 / 0.22), 0 2px 6px rgb(0 0 0 / 0.08);
+  --font-sans: var(--font-jost);
+  --font-display: var(--font-cinzel);
+  --radius-card: 10px;
+  --radius-input: 6px;
+  --radius-badge: 4px;
+  --shadow-float: 0 12px 32px -8px rgb(11 12 14 / 0.28), 0 2px 6px rgb(11 12 14 / 0.1);
 }
 
 html { -webkit-text-size-adjust: 100%; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-jost), system-ui, sans-serif;
 }
+
+/* Display serif echoes the logo's wordmark. Headings only. */
+.display { font-family: var(--font-cinzel), Georgia, serif; letter-spacing: .02em; text-wrap: balance; }
+h1, h2 { text-wrap: balance; }
+
+/* Arabic snippets inside English copy. */
+.ar { font-family: var(--font-arabic), system-ui, sans-serif; font-size: 1.06em; line-height: 1.7; letter-spacing: 0; }
+
+.brand-label { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--muted); }
 
 /* Tabular figures for every price so columns line up. */
 .price { font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -53,13 +73,20 @@ body {
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
   min-height: 44px; padding: 0 1.25rem; border-radius: var(--radius-input);
-  font-weight: 600; font-size: 15px; transition: background-color .15s, opacity .15s;
+  font-weight: 500; font-size: 15px; letter-spacing: .01em;
+  transition: background-color .15s, opacity .15s, transform .1s;
 }
+.btn:active:not(:disabled) { transform: scale(.98); }
 .btn-primary { background: var(--accent); color: var(--accent-ink); }
 .btn-primary:hover { background: color-mix(in srgb, var(--accent) 88%, black); }
 .btn-primary:disabled { opacity: .45; cursor: not-allowed; }
 .btn-secondary { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
 .btn-secondary:hover { background: var(--surface-2); }
+/* Light button for night surfaces. */
+.btn-silver { background: var(--silver); color: var(--night); }
+.btn-silver:hover { background: #e3e6ea; }
+.btn-ghost-night { color: var(--silver); border: 1px solid var(--night-line); }
+.btn-ghost-night:hover { border-color: var(--silver-muted); }
 .link-quiet { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
 .link-quiet:hover { color: var(--ink); }
 

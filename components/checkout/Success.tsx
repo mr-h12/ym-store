@@ -51,7 +51,7 @@ export const Success = forwardRef<HTMLHeadingElement, { order: PlacedOrder }>(fu
               Your order arrives <span className="font-medium">{order.delivery}</span> at {d.street}, {d.area}, {d.city}.
             </li>
             <li>
-              {paymentLabel(d.payment)}: <span className="price font-medium">{formatPrice(order.total)}</span> due on delivery.
+              {paymentLabel(d.payment)}: {order.total > 0 ? <><span className="price font-medium">{formatPrice(order.total)}</span> due on delivery.</> : "we'll confirm the total with you on WhatsApp."}
             </li>
           </ol>
         </section>

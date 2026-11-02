@@ -56,11 +56,10 @@ export function ProductBuyBox({
   function whatsappHref(withUrl: boolean) {
     const url = withUrl ? window.location.href : "";
     const msg = [
-      `Hi ${storeConfig.name}, I'd like to order:`,
+      `Hi ${storeConfig.shortName}, price & sizes please for:`,
       product.name,
       `Colour: ${colour.name}`,
       `Size: ${size ?? "not chosen yet"}`,
-      `Price: ${price}`,
       url,
     ].filter(Boolean).join("\n");
     return whatsappUrl(msg);
@@ -69,7 +68,8 @@ export function ProductBuyBox({
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold leading-tight tracking-tight md:text-[28px]">{product.name}</h1>
+        {product.brand && <p className="brand-label">{product.brand}</p>}
+        <h1 className="mt-1 text-2xl font-semibold leading-tight tracking-tight md:text-[28px]">{product.name}</h1>
         <p className="price mt-2 text-lg">
           {onSale ? (
             <>
@@ -80,7 +80,7 @@ export function ProductBuyBox({
               <span className="ms-2 text-sm font-medium text-sale">Save {formatPrice(product.compareAt! - product.price)}</span>
             </>
           ) : (
-            <span className="font-semibold">{price}</span>
+            <span className={product.price ? "font-semibold" : "text-base text-muted"}>{price}</span>
           )}
         </p>
       </div>
@@ -133,7 +133,7 @@ export function ProductBuyBox({
           aria-describedby={sizeError ? "size-error" : undefined}
           className="btn btn-primary h-13 w-full text-base"
         >
-          {soldOut ? "Sold out" : <>Add to bag · <span className="price">{price}</span></>}
+          {soldOut ? "Sold out" : product.price ? <>Add to bag · <span className="price">{price}</span></> : "Add to bag"}
         </button>
         <a
           href={whatsappHref(false)}
@@ -143,18 +143,18 @@ export function ProductBuyBox({
           }}
           target="_blank"
           rel="noreferrer"
-          className="link-quiet tap mt-3 flex items-center justify-center gap-2 text-sm"
+          className="btn btn-secondary mt-3 w-full"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z" />
           </svg>
-          Or order on WhatsApp
+          Ask price on WhatsApp
         </a>
         <p aria-live="polite" role="status" className="sr-only">{announce}</p>
       </div>
 
       <div className="border-t border-line pt-5">
-        <DeliveryInfo price={product.price} />
+        <DeliveryInfo />
       </div>
 
       <SizeGuideDialog open={guideOpen} onClose={closeGuide} productName={product.name} shape={shape} fit={product.fit} />

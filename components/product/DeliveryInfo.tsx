@@ -1,27 +1,4 @@
-"use client";
-
-import { useSyncExternalStore } from "react";
 import { storeConfig } from "@/lib/store-config";
-import { formatPrice } from "@/lib/format";
-
-import { addWorkingDays, DELIVERY_MAX_DAYS, DELIVERY_MIN_DAYS } from "@/lib/delivery";
-
-const wd = new Intl.DateTimeFormat(storeConfig.locale, { weekday: "short" });
-const mon = new Intl.DateTimeFormat(storeConfig.locale, { month: "short" });
-
-export function deliveryRange(today: Date) {
-  const a = addWorkingDays(today, DELIVERY_MIN_DAYS);
-  const b = addWorkingDays(today, DELIVERY_MAX_DAYS);
-  const sameMonth = a.getMonth() === b.getMonth();
-  const left = `${wd.format(a)} ${a.getDate()}${sameMonth ? "" : ` ${mon.format(a)}`}`;
-  const right = `${wd.format(b)} ${b.getDate()} ${mon.format(b)}`;
-  return `${left} – ${right}`;
-}
-
-// The date is computed in the browser (the page is pre-rendered), keyed by day.
-const subscribe = () => () => {};
-const todayKey = () => new Date().toDateString();
-const serverKey = () => null;
 
 function Icon({ d }: { d: string }) {
   return (
@@ -33,48 +10,28 @@ function Icon({ d }: { d: string }) {
 
 const ICONS = {
   truck: "M3 6h11v10H3zM14 9h4l3 3v4h-7M7.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM17.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z",
-  tag: "M3 12V4h8l10 10-8 8L3 12zM7.5 8.5h.01",
+  map: "M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14",
   cash: "M3 7h18v10H3zM12 14.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM6 10v.01M18 14v.01",
-  returns: "M4 9h11a5 5 0 0 1 0 10H9M4 9l4-4M4 9l4 4",
 };
 
-export function DeliveryInfo({ price }: { price: number }) {
-  const key = useSyncExternalStore(subscribe, todayKey, serverKey);
-  const range = key ? deliveryRange(new Date(key)) : null;
-  const free = price >= storeConfig.freeShippingThreshold;
-
+/** The store's own delivery and payment promises (from its Instagram and Facebook posts). */
+export function DeliveryInfo() {
   return (
     <ul className="space-y-2.5 text-sm">
       <li className="flex gap-2.5">
         <Icon d={ICONS.truck} />
         <span>
-          {range ? (
-            <>Delivery <span className="font-semibold">{range}</span></>
-          ) : (
-            <>Delivery in {storeConfig.deliveryEstimate}</>
-          )}
+          <span className="font-semibold">Same-day delivery</span> in Alexandria{" "}
+          <span lang="ar" dir="rtl" className="ar text-muted">· يجيلك ف نفس اليوم</span>
         </span>
       </li>
       <li className="flex gap-2.5">
-        <Icon d={ICONS.tag} />
-        <span>
-          {free ? (
-            "Free delivery on this item"
-          ) : (
-            <>
-              Free delivery over <span className="price">{formatPrice(storeConfig.freeShippingThreshold)}</span>
-              <span className="text-muted">, otherwise <span className="price">{formatPrice(storeConfig.shippingFee)}</span></span>
-            </>
-          )}
-        </span>
+        <Icon d={ICONS.map} />
+        <span>Shipping to all governorates in Egypt</span>
       </li>
       <li className="flex gap-2.5">
         <Icon d={ICONS.cash} />
-        <span>Cash on delivery available</span>
-      </li>
-      <li className="flex gap-2.5">
-        <Icon d={ICONS.returns} />
-        <span>{storeConfig.returnsWindowDays}-day free returns</span>
+        <span>{storeConfig.payment}</span>
       </li>
     </ul>
   );

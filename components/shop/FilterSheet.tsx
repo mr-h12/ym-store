@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState, type RefObject } from "react";
-import type { Product, Size } from "@/lib/types";
-import { SIZES } from "@/lib/format";
+import type { Product } from "@/lib/types";
 import {
+  BRANDS,
   COLOURS,
   EMPTY_FILTERS,
-  FITS,
-  PRICE_BANDS,
   applyFilters,
   itemsLabel,
   type FilterState,
@@ -46,8 +44,6 @@ export function FilterSheet({
   // Open the secondary groups that already have a value.
   const [openGroups] = useState(() => ({
     colour: initial.colours.length > 0,
-    fit: initial.fits.length > 0,
-    price: initial.price !== null,
   }));
 
   const count = applyFilters(items, draft).length;
@@ -116,26 +112,25 @@ export function FilterSheet({
         </div>
 
         <div className="flex-1 overflow-y-auto overscroll-contain px-4 md:px-6">
-          {/* Size first and always expanded: it is the filter people use most. */}
+          {/* Brand first and always expanded: it is how this store's customers shop. */}
           <fieldset className="border-b border-line py-5">
-            <legend className="float-start mb-3 w-full text-sm font-semibold">Size</legend>
-            <div className="clear-both grid grid-cols-5 gap-2">
-              {SIZES.map((s: Size) => {
-                const on = draft.sizes.includes(s);
+            <legend className="float-start mb-3 w-full text-sm font-semibold">Brand</legend>
+            <div className="clear-both flex flex-wrap gap-2">
+              {BRANDS.map((b) => {
+                const on = draft.brands.includes(b);
                 return (
                   <button
-                    key={s}
+                    key={b}
                     type="button"
                     aria-pressed={on}
-                    onClick={() => setDraft((d) => ({ ...d, sizes: toggle(d.sizes, s) }))}
-                    className={`${pill} h-11 px-0 ${pillState(on)}`}
+                    onClick={() => setDraft((d) => ({ ...d, brands: toggle(d.brands, b) }))}
+                    className={`${pill} ${pillState(on)}`}
                   >
-                    {s}
+                    {b}
                   </button>
                 );
               })}
             </div>
-            <p className="mt-2 text-xs text-muted">Shows items in stock in the sizes you pick.</p>
           </fieldset>
 
           <Group title="Colour" defaultOpen={openGroups.colour} count={draft.colours.length}>
@@ -158,65 +153,6 @@ export function FilterSheet({
             </div>
           </Group>
 
-          <Group title="Fit" defaultOpen={openGroups.fit} count={draft.fits.length}>
-            <div className="grid grid-cols-2 gap-2">
-              {FITS.map((f) => {
-                const on = draft.fits.includes(f);
-                return (
-                  <button
-                    key={f}
-                    type="button"
-                    aria-pressed={on}
-                    onClick={() => setDraft((d) => ({ ...d, fits: toggle(d.fits, f) }))}
-                    className={`${pill} ${pillState(on)}`}
-                  >
-                    {f}
-                  </button>
-                );
-              })}
-            </div>
-          </Group>
-
-          <Group title="Price" defaultOpen={openGroups.price} count={draft.price ? 1 : 0}>
-            <div className="grid grid-cols-2 gap-2">
-              {PRICE_BANDS.map((b) => {
-                const on = draft.price === b.value;
-                return (
-                  <button
-                    key={b.value}
-                    type="button"
-                    aria-pressed={on}
-                    onClick={() => setDraft((d) => ({ ...d, price: on ? null : b.value }))}
-                    className={`${pill} price ${pillState(on)}`}
-                  >
-                    {b.label}
-                  </button>
-                );
-              })}
-            </div>
-          </Group>
-
-          <div className="flex items-center justify-between py-5">
-            <span id="sale-label" className="text-sm font-semibold">
-              On sale
-            </span>
-            <button
-              type="button"
-              role="switch"
-              aria-checked={draft.sale}
-              aria-labelledby="sale-label"
-              onClick={() => setDraft((d) => ({ ...d, sale: !d.sale }))}
-              className="tap inline-flex items-center"
-            >
-              <span
-                className={`relative inline-block h-7 w-12 rounded-full border transition-colors ${draft.sale ? "border-accent bg-accent" : "border-line bg-surface-2"}`}
-              >
-                <span
-                  className={`absolute top-0.5 h-[22px] w-[22px] rounded-full bg-surface shadow-sm transition-[inset-inline-start] ${draft.sale ? "start-[22px]" : "start-0.5"}`}
-                />
-              </span>
-            </button>
-          </div>
         </div>
 
         <div className="flex flex-col items-center gap-3 border-t border-line px-4 pt-3 pb-[max(1rem,env(safe-area-inset-bottom))] md:px-6">

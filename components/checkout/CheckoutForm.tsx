@@ -101,7 +101,7 @@ export const CheckoutForm = forwardRef<HTMLFormElement, Props>(function Checkout
           />
         </Field>
         <div className="grid gap-4 sm:grid-cols-2">
-          <Field id="co-city" label="City">
+          <Field id="co-city" label="Governorate">
             <select
               id="co-city"
               name="city"
@@ -173,20 +173,16 @@ export const CheckoutForm = forwardRef<HTMLFormElement, Props>(function Checkout
       <fieldset>
         <legend className="mb-4 text-lg font-semibold">Payment</legend>
         <div className="grid gap-3">
-          {PAYMENTS.map((p) => {
-            const disabled = "disabled" in p && p.disabled;
-            return (
+          {PAYMENTS.map((p) => (
+
               <label
                 key={p.id}
-                className={`flex items-start gap-3 rounded-[var(--radius-card)] border border-line bg-surface p-4 has-[input:checked]:border-accent has-[input:checked]:ring-2 has-[input:checked]:ring-accent has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-2 has-[input:focus-visible]:outline-accent ${
-                  disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"
-                }`}
+                className="flex cursor-pointer items-start gap-3 rounded-[var(--radius-card)] border border-line bg-surface p-4 has-[input:checked]:border-accent has-[input:checked]:ring-2 has-[input:checked]:ring-accent has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-2 has-[input:focus-visible]:outline-accent"
               >
                 <input
                   type="radio"
                   name="payment"
                   value={p.id}
-                  disabled={disabled}
                   checked={values.payment === p.id}
                   onChange={() => onChange("payment", p.id)}
                   className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--accent)]"
@@ -196,8 +192,7 @@ export const CheckoutForm = forwardRef<HTMLFormElement, Props>(function Checkout
                   <span className="block text-sm text-muted">{p.note}</span>
                 </span>
               </label>
-            );
-          })}
+          ))}
         </div>
       </fieldset>
 

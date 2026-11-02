@@ -27,18 +27,26 @@ export function ProductCard({ product, priority = false }: { product: Product; p
   return (
     <article className="group relative">
       <Link href={`/product/${product.slug}`} className="block">
-        <div className="relative aspect-[3/4] overflow-hidden rounded-[var(--radius-card)] border border-line">
-          <ProductImage shape={shape} colour={first.hex} name={`${product.name} in ${first.name}`} src={product.images[0]} priority={priority} />
+        <div className="relative aspect-[3/4] overflow-hidden rounded-[var(--radius-card)] bg-white">
+          <ProductImage
+            shape={shape}
+            colour={first.hex}
+            name={`${product.name} in ${first.name}`}
+            src={product.images[0]}
+            priority={priority}
+            className="transition-transform duration-300 group-hover:scale-[1.03]"
+          />
           {badge && (
-            <span className={`absolute start-2 top-2 rounded-[var(--radius-badge)] px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${badge === "Sale" ? "bg-sale text-white" : "bg-surface text-ink"}`}>
+            <span className={`absolute start-2 top-2 rounded-[var(--radius-badge)] px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${badge === "Sale" ? "bg-sale text-white" : "bg-night text-silver"}`}>
               {badge}
             </span>
           )}
         </div>
         <div className="mt-2.5 min-w-0">
-          <h3 className="text-sm leading-snug">{product.name}</h3>
+          {product.brand && <p className="brand-label">{product.brand}</p>}
+          <h3 className="mt-0.5 text-sm leading-snug">{product.name}</h3>
           <p className="mt-0.5 flex flex-wrap items-baseline gap-x-1.5 text-sm font-semibold">
-            <span className={`price ${onSale ? "text-sale" : ""}`}>{formatPrice(product.price)}</span>
+            <span className={`price ${onSale ? "text-sale" : product.price ? "" : "font-normal text-muted"}`}>{formatPrice(product.price)}</span>
             {onSale && (
               <span className="price text-xs font-normal text-muted line-through">
                 <span className="sr-only">Was </span>{formatPrice(product.compareAt!)}

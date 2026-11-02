@@ -1,46 +1,51 @@
 import Link from "next/link";
 import { getProduct } from "@/data/products";
-import { ProductImage } from "@/components/ProductImage";
-import type { GarmentShape } from "@/lib/types";
+import { storeConfig } from "@/lib/store-config";
+import { WhatsAppIcon } from "@/components/WhatsAppFab";
 
-const FEATURED: { slug: string; shape: GarmentShape }[] = [
-  { slug: "wool-blend-overcoat", shape: "jacket" },
-  { slug: "merino-crewneck", shape: "knit" },
-];
+const FEATURED = ["y-3-leather-bomber-jacket", "valentino-sweatshirt"];
 
-/** Calm, full-bleed hero: one headline, one line, one primary action. */
+/** Night hero: one headline, one primary action, two real product shots (desktop). */
 export function Hero() {
-  const [back, front] = FEATURED.map((f) => ({ ...f, product: getProduct(f.slug)! }));
+  const [back, front] = FEATURED.map((slug) => getProduct(slug)!);
 
   return (
-    <section className="bg-surface-2">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-8 md:grid-cols-2 md:px-6 md:py-16 lg:py-20">
+    <section className="bg-night text-silver">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pt-10 pb-12 md:grid-cols-[1.1fr_1fr] md:px-6 md:py-20 lg:py-24">
         <div>
-          <p className="eyebrow">Autumn edit</p>
-          <h1 className="mt-3 text-[2rem] leading-[1.08] font-semibold tracking-tight text-balance md:text-5xl lg:text-6xl">
-            New season basics, built to be worn often.
+          <p className="text-xs tracking-[.2em] text-silver-muted uppercase">Alexandria · Your fashion dealer</p>
+          <h1 className="display mt-4 text-[2.1rem] leading-[1.08] font-semibold text-white md:text-5xl lg:text-[3.6rem]">
+            Designer menswear, picked for Alexandria.
           </h1>
-          <p className="mt-3 max-w-md text-base text-muted md:mt-5 md:text-lg">
-            Heavy cotton, merino and linen in easy shapes. Pay cash on delivery.
+          <p className="mt-4 max-w-md text-base leading-relaxed text-silver-muted md:mt-6 md:text-lg">
+            Balmain, Calvin Klein, Armani, Hermès, Burberry and more. Order on WhatsApp and get it the same day in
+            Alexandria.
           </p>
-          <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6 md:mt-8">
-            <Link href="/shop?sort=newest" className="btn btn-primary w-full sm:w-auto sm:px-8">
-              Shop new in
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-9">
+            <Link href="/shop" className="btn btn-silver w-full sm:w-auto sm:px-8">
+              Shop the collection
             </Link>
-            <Link href="/shop" className="link-quiet tap inline-flex items-center justify-center text-sm">
-              Browse all clothing
-            </Link>
+            <a
+              href={`https://wa.me/${storeConfig.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-ghost-night w-full sm:w-auto"
+            >
+              <WhatsAppIcon className="h-5 w-5" /> {storeConfig.phones[0]}
+            </a>
           </div>
         </div>
 
-        {/* Two overlapping garments; desktop only so products stay above the fold on phones. */}
+        {/* Two overlapping real photos; desktop only so products stay near the top on phones. */}
         <div className="relative hidden aspect-[5/4] md:block" aria-hidden="true">
-          <div className="absolute inset-y-0 start-0 w-[60%] overflow-hidden rounded-[var(--radius-card)] border border-line [&>div]:bg-surface">
-            <ProductImage shape={back.shape} colour={back.product.colours[1]?.hex ?? back.product.colours[0].hex} name={back.product.name} priority />
+          <div className="absolute inset-y-0 start-0 w-[58%] overflow-hidden rounded-[var(--radius-card)] bg-white">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={back.images[0]} alt="" className="h-full w-full object-cover" />
           </div>
-          <div className="absolute end-0 bottom-[-6%] w-[52%] overflow-hidden rounded-[var(--radius-card)] border border-line bg-bg p-2 [&_div]:bg-surface-2">
-            <div className="aspect-[3/4] overflow-hidden rounded-[calc(var(--radius-card)-4px)]">
-              <ProductImage shape={front.shape} colour={front.product.colours[0].hex} name={front.product.name} priority />
+          <div className="absolute end-0 bottom-[-8%] w-[50%] rounded-[var(--radius-card)] bg-night p-2">
+            <div className="aspect-[3/4] overflow-hidden rounded-[calc(var(--radius-card)-4px)] bg-white">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={front.images[0]} alt="" className="h-full w-full object-cover" />
             </div>
           </div>
         </div>

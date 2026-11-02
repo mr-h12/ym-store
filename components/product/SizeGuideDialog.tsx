@@ -110,10 +110,10 @@ export function SizeGuideDialog({
           </tbody>
         </table>
 
-        <p className="mt-4 text-sm"><span className="font-semibold">{fit} fit.</span> {FIT_NOTE[fit]}</p>
+        {fit && <p className="mt-4 text-sm"><span className="font-semibold">{fit} fit.</span> {FIT_NOTE[fit]}</p>}
         <p className="mt-2 text-sm text-muted">
-          Measure a garment you own that fits well, lying flat, and compare. Not sure? Order your usual size —
-          returns are free.
+          A general guide: designer sizing varies by brand. Measure a garment you own that fits well, lying flat,
+          and compare. Not sure? Message us on WhatsApp and we&apos;ll help you pick.
         </p>
       </div>
     </dialog>

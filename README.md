@@ -1,6 +1,6 @@
-# Y.M Store: online clothing store demo
+# Y&M STORE: men's designer clothing, Alexandria
 
-A demo storefront for **Y.M Store** ([Instagram @y_m_storee](https://www.instagram.com/y_m_storee)). It's built with
+The storefront for **Y&M STORE** ([Instagram @y_m_storee](https://www.instagram.com/y_m_storee)). It's built with
 Next.js 15 (App Router), React 19, TypeScript and Tailwind CSS v4.
 
 The design draws on a survey of 18 leading fashion stores and published e-commerce UX research. The design rules come from the
@@ -13,7 +13,7 @@ UI/UX notes in [`docs/uiux-notes.md`](docs/uiux-notes.md):
 - 44px touch targets
 - no horizontal scroll at 375px
 
-![Mobile preview](docs/screenshots/preview-mobile.png)
+![Mobile preview](docs/screenshots/ym-mobile-home.jpg) ![Desktop preview](docs/screenshots/ym-desktop-home.jpg)
 
 ## Run it
 
@@ -33,21 +33,24 @@ npm run build      # production build
 | Bag drawer | Free-delivery progress, quantity controls, totals, Checkout or WhatsApp |
 | `/checkout` | Guest checkout with 8 fields or fewer and cash on delivery. "Place order" sends the order to the store on WhatsApp with an order number |
 
-## Swap in the real store data
+## Store data
 
-Everything below is a **placeholder**: products, prices (EGP), city list, WhatsApp number and delivery rules.
+The real Y&M STORE catalogue and contacts (from Instagram @y_m_storee and the Facebook page, collected 2026-11-03):
 
-- `lib/store-config.ts`: name, WhatsApp number, currency and locale, LTR or RTL, delivery fee and free-delivery threshold, returns window
-- `data/products.ts`: categories and products (sizes and stock, colours, fit, material)
-- `public/products/`: product photos. Add their paths to a product's `images` array. Products without photos show a drawn garment shape
-- `lib/delivery.ts`: working days for delivery estimates
-- `components/checkout/fields.ts`: city list and payment options
+- `data/catalog.json`: 54 products built from the store's 2026 posts. One product = one post + item + brand, with each colourway's
+  front/back photos (`public/products/`, 112 photos). **Prices aren't published**: `"price": 0` shows "Price on WhatsApp".
+  Type a number in EGP to show a price; the cart, checkout and WhatsApp message pick it up.
+- `data/products.ts`: categories, and **placeholder sizes** (S–XXL all available) until real stock is known.
+- `lib/store-config.ts`: address (Arabic + English), map, phones, WhatsApp number and group, Instagram, Facebook, Threads,
+  delivery (same day in Alexandria, all governorates) and payment (cash or Visa).
+- `components/product/size-data.ts`: a general size guide, not measured from these items.
 
-The layout uses logical CSS properties, so setting `dir: "rtl"` mirrors it for Arabic. The text is not translated yet.
+The layout uses logical CSS properties, so setting `dir: "rtl"` mirrors it for Arabic.
 
 ## Research
 
 - [`research/fashion-ecommerce-survey.md`](research/fashion-ecommerce-survey.md): combined ranking and the patterns we adopted
 - [`research/a-browse.md`](research/a-browse.md), [`research/b-pdp-checkout.md`](research/b-pdp-checkout.md) and
   [`research/c-evidence.md`](research/c-evidence.md): the detailed reports with sources
-- [`docs/screenshots/`](docs/screenshots/): every page at 375px and 1280px
+- [`research/d-ym-redesign.md`](research/d-ym-redesign.md): black/metal palette, WhatsApp ordering, Egyptian delivery and payment, Arabic
+- [`docs/screenshots/`](docs/screenshots/): `ym-*` are the current design; the rest show the earlier demo

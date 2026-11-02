@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { useCart } from "./CartProvider";
 import { ProductImage } from "./ProductImage";
 import { Totals } from "./checkout/Totals";
-import { getCategory, getProductById } from "@/data/products";
+import { getCategory, getProductById, imageFor } from "@/data/products";
 import { formatPrice } from "@/lib/format";
 import { storeConfig } from "@/lib/store-config";
 import { whatsappOrderUrl } from "@/lib/whatsapp";
@@ -17,7 +17,7 @@ const FOCUSABLE =
 
 export function CartDrawer() {
   const cart = useCart();
-  const { isOpen, close, lines, count, subtotal, shipping, total, toFreeShipping, setQty, remove, lastAdded } = cart;
+  const { isOpen, close, lines, count, subtotal, shipping, total, setQty, remove, lastAdded } = cart;
   const pathname = usePathname();
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
@@ -82,8 +82,6 @@ export function CartDrawer() {
   if (!isOpen) return null;
 
   const added = showAdded && lastAdded ? getProductById(lastAdded.productId) : undefined;
-  const threshold = storeConfig.freeShippingThreshold;
-  const progress = Math.min(100, Math.round((subtotal / threshold) * 100));
 
   return (
     <div className="fixed inset-0 z-50" role="dialog" aria-modal="true" aria-labelledby="cart-title">
@@ -136,25 +134,9 @@ export function CartDrawer() {
         ) : (
           <>
             <div className="flex-1 overflow-y-auto overscroll-contain">
-              <div className="border-b border-line px-4 py-3 text-sm">
-                {toFreeShipping > 0 ? (
-                  <p>
-                    Add <span className="price font-semibold">{formatPrice(toFreeShipping)}</span> for free delivery
-                  </p>
-                ) : (
-                  <p className="font-medium text-ok">You&apos;ve got free delivery</p>
-                )}
-                <div
-                  className="mt-2 h-1 overflow-hidden rounded-full bg-surface-2"
-                  role="progressbar"
-                  aria-label="Progress to free delivery"
-                  aria-valuemin={0}
-                  aria-valuemax={threshold}
-                  aria-valuenow={Math.min(subtotal, threshold)}
-                >
-                  <div className="h-full bg-accent" style={{ width: `${progress}%` }} />
-                </div>
-              </div>
+              <p className="border-b border-line px-4 py-3 text-sm text-muted">
+                Prices and delivery are confirmed with you on WhatsApp before anything ships.
+              </p>
 
               <ul className="divide-y divide-line px-4">
                 {lines.map((l) => {
@@ -171,7 +153,7 @@ export function CartDrawer() {
                         tabIndex={-1}
                         aria-hidden="true"
                       >
-                        <ProductImage shape={shape} colour={hex} name={l.product.name} src={l.product.images[0]} />
+                        <ProductImage shape={shape} colour={hex} name={l.product.name} src={imageFor(l.product, l.colour)} />
                       </Link>
                       <div className="flex min-w-0 flex-1 flex-col">
                         <div className="flex items-start justify-between gap-3">
@@ -227,10 +209,10 @@ export function CartDrawer() {
             <div className="shrink-0 border-t border-line bg-surface px-4 pt-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
               <Totals subtotal={subtotal} shipping={shipping} total={total} />
               <p className="mt-2 text-xs text-muted">
-                Cash on delivery · Arrives in {storeConfig.deliveryEstimate} · {storeConfig.returnsWindowDays}-day returns
+                {storeConfig.payment} · Delivery {storeConfig.deliveryEstimate}
               </p>
               <Link href="/checkout" onClick={close} className="btn btn-primary mt-3 w-full">
-                Checkout · <span className="price">{formatPrice(total)}</span>
+                Checkout{total > 0 && <> · <span className="price">{formatPrice(total)}</span></>}
               </Link>
               <p className="mt-3 text-center text-sm">
                 <a

@@ -1,10 +1,11 @@
 export type CategorySlug =
   | "t-shirts"
-  | "shirts"
-  | "knitwear"
-  | "trousers"
-  | "outerwear"
-  | "dresses";
+  | "long-sleeves"
+  | "polos"
+  | "hoodies"
+  | "tracksuits"
+  | "swim"
+  | "jackets-denim";
 
 export type GarmentShape =
   | "tee"
@@ -14,11 +15,14 @@ export type GarmentShape =
   | "jacket"
   | "dress";
 
-export type Size = "XS" | "S" | "M" | "L" | "XL";
+export type Size = "S" | "M" | "L" | "XL" | "XXL";
 
 export interface Colour {
   name: string;
+  /** Any CSS background (flat hex, two-tone gradient, checkerboard). */
   hex: string;
+  /** Photos of this colourway: front first, then back if there is one. */
+  images: string[];
 }
 
 export interface Category {
@@ -32,22 +36,24 @@ export interface Product {
   id: string;
   slug: string;
   name: string;
+  brand: string;
   category: CategorySlug;
+  /** 0 = price on request (asked on WhatsApp). */
   price: number;
   /** Original price when on sale. */
   compareAt?: number;
   colours: Colour[];
   /** Sizes in stock → units left. Missing size = sold out. */
   stock: Partial<Record<Size, number>>;
-  fit: "Relaxed" | "Regular" | "Slim" | "Oversized";
-  material: string;
-  care: string;
+  fit?: "Relaxed" | "Regular" | "Slim" | "Oversized";
+  material?: string;
+  care?: string;
   description: string;
-  /** Real photo paths (e.g. /products/abc-1.jpg). Empty → illustrated placeholder. */
+  /** First colourway's photos. */
   images: string[];
+  /** The Instagram post the photos come from. */
+  instagram: string;
   isNew?: boolean;
-  /** Higher = more popular; used for "Popular" sort. */
-  popularity: number;
   /** ISO date, used for "Newest" sort. */
   addedAt: string;
 }
