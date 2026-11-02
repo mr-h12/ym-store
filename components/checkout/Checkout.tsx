@@ -93,14 +93,21 @@ export function Checkout() {
     setStep("details");
   };
 
-  const customer = {
-    ...details,
-    payment: paymentLabel(details.payment),
-  };
-
   const place = () => {
     const number = `YM-${Math.floor(10000 + Math.random() * 90000)}`;
-    setOrder({ number, details, lines, subtotal, shipping, total, delivery });
+    const clean = Object.fromEntries(
+      Object.entries(details).map(([k, v]) => [k, typeof v === "string" ? v.trim() : v]),
+    ) as typeof details;
+    // No backend yet: the order is delivered to the store as a WhatsApp message
+    // carrying the order number, so the store can match it when confirming.
+    const whatsapp = whatsappOrderUrl(
+      lines,
+      { subtotal, shipping, total },
+      { ...clean, payment: paymentLabel(clean.payment) },
+      number,
+    );
+    window.open(whatsapp, "_blank", "noopener,noreferrer");
+    setOrder({ number, details: clean, lines, subtotal, shipping, total, delivery, whatsapp });
     setStep("done");
     clear();
   };
@@ -182,15 +189,8 @@ export function Checkout() {
                     <button type="button" onClick={place} className="btn btn-primary w-full">
                       Place order · <span className="price">{formatPrice(total)}</span>
                     </button>
-                    <p className="mt-2 text-center text-sm">
-                      <a
-                        className="link-quiet"
-                        href={whatsappOrderUrl(lines, { subtotal, shipping, total }, customer)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Send this order on WhatsApp
-                      </a>
+                    <p className="mt-2 text-center text-xs text-muted">
+                      Opens WhatsApp with your order — tap send so we receive it.
                     </p>
                   </ActionBar>
                 }

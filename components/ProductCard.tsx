@@ -7,6 +7,7 @@ import { getCategory } from "@/data/products";
 import { formatPrice, SIZES } from "@/lib/format";
 import { ProductImage } from "./ProductImage";
 import { useCart } from "./CartProvider";
+import { isOnSale } from "./shop/filters";
 
 /**
  * Product card: 3:4 image, ONE badge max, name, price (sale shown against the
@@ -17,7 +18,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
   const [picking, setPicking] = useState(false);
   const shape = getCategory(product.category)!.shape;
   const first = product.colours[0];
-  const onSale = product.compareAt && product.compareAt > product.price;
+  const onSale = isOnSale(product);
   const lowStock = Object.values(product.stock).reduce((a, b) => a + (b ?? 0), 0) <= 6;
   const badge = onSale ? "Sale" : product.isNew ? "New" : lowStock ? "Low stock" : null;
   const shown = product.colours.slice(0, 4);

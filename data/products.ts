@@ -60,9 +60,9 @@ const seeds: Seed[] = [
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
-export const products: Product[] = seeds.map((s, i) => ({
+export const products: Product[] = seeds.map((s) => ({
   ...s,
-  id: `p${String(i + 1).padStart(3, "0")}`,
+  id: slugify(s.name),
   slug: slugify(s.name),
   images: [],
   care: s.care ?? "Machine wash cold, inside out. Dry flat. Cool iron.",

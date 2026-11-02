@@ -16,6 +16,8 @@ export interface PlacedOrder {
   shipping: number;
   total: number;
   delivery: string;
+  /** wa.me link carrying this order, so it can be re-sent. */
+  whatsapp: string;
 }
 
 export const Success = forwardRef<HTMLHeadingElement, { order: PlacedOrder }>(function Success({ order }, ref) {
@@ -28,7 +30,7 @@ export const Success = forwardRef<HTMLHeadingElement, { order: PlacedOrder }>(fu
         </svg>
       </div>
       <h1 ref={ref} tabIndex={-1} className="mt-4 text-2xl font-bold tracking-tight outline-none">
-        Thank you, {d.name.split(" ")[0]}. Your order is placed.
+        Thank you, {d.name.split(/\s+/)[0]}. Your order is placed.
       </h1>
       <p className="mt-2 text-muted">
         Order number <span className="price font-semibold text-ink">{order.number}</span>
@@ -38,6 +40,12 @@ export const Success = forwardRef<HTMLHeadingElement, { order: PlacedOrder }>(fu
         <section className="py-4">
           <h2 className="text-sm font-semibold">What happens next</h2>
           <ol className="mt-2 list-decimal space-y-1 ps-5 text-sm">
+            <li>
+              Send the WhatsApp message we opened with your order.{" "}
+              <a className="link-quiet" href={order.whatsapp} target="_blank" rel="noopener noreferrer">
+                Didn&apos;t open? Send it again
+              </a>
+            </li>
             <li>We&apos;ll call or WhatsApp you on {d.phone} to confirm within a few hours.</li>
             <li>
               Your order arrives <span className="font-medium">{order.delivery}</span> at {d.street}, {d.area}, {d.city}.

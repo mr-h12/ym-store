@@ -1,5 +1,7 @@
 "use client";
 
+import { whatsappUrl } from "@/lib/whatsapp";
+import { isOnSale } from "@/components/shop/filters";
 import { useCallback, useRef, useState } from "react";
 import type { Colour, GarmentShape, Product, Size } from "@/lib/types";
 import { useCart } from "@/components/CartProvider";
@@ -30,7 +32,7 @@ export function ProductBuyBox({
   const addRef = useRef<HTMLButtonElement>(null);
   const closeGuide = useCallback(() => setGuideOpen(false), []);
 
-  const onSale = !!product.compareAt && product.compareAt > product.price;
+  const onSale = isOnSale(product);
   const soldOut = Object.values(product.stock).every((n) => !n);
   const price = formatPrice(product.price);
 
@@ -61,7 +63,7 @@ export function ProductBuyBox({
       `Price: ${price}`,
       url,
     ].filter(Boolean).join("\n");
-    return `https://wa.me/${storeConfig.whatsapp}?text=${encodeURIComponent(msg)}`;
+    return whatsappUrl(msg);
   }
 
   return (

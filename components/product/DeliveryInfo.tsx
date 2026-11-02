@@ -4,25 +4,14 @@ import { useSyncExternalStore } from "react";
 import { storeConfig } from "@/lib/store-config";
 import { formatPrice } from "@/lib/format";
 
-/** Days couriers don't deliver (0 = Sun … 6 = Sat). Friday is the weekend day here. */
-const NON_WORKING = new Set([5]);
-
-function addWorkingDays(from: Date, n: number) {
-  const d = new Date(from);
-  let left = n;
-  while (left > 0) {
-    d.setDate(d.getDate() + 1);
-    if (!NON_WORKING.has(d.getDay())) left--;
-  }
-  return d;
-}
+import { addWorkingDays, DELIVERY_MAX_DAYS, DELIVERY_MIN_DAYS } from "@/lib/delivery";
 
 const wd = new Intl.DateTimeFormat(storeConfig.locale, { weekday: "short" });
 const mon = new Intl.DateTimeFormat(storeConfig.locale, { month: "short" });
 
 export function deliveryRange(today: Date) {
-  const a = addWorkingDays(today, 2);
-  const b = addWorkingDays(today, 4);
+  const a = addWorkingDays(today, DELIVERY_MIN_DAYS);
+  const b = addWorkingDays(today, DELIVERY_MAX_DAYS);
   const sameMonth = a.getMonth() === b.getMonth();
   const left = `${wd.format(a)} ${a.getDate()}${sameMonth ? "" : ` ${mon.format(a)}`}`;
   const right = `${wd.format(b)} ${b.getDate()} ${mon.format(b)}`;

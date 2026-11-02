@@ -16,17 +16,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 }
 
 export default async function CategoryPage({
-  params,
-  searchParams,
-}: {
-  params: Params;
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-}) {
+  params }: { params: Params }) {
   const cat = getCategory((await params).category);
   if (!cat) notFound();
-  const { sort } = await searchParams;
   return (
-    <Suspense fallback={<ShopFallback category={cat.slug} sort={typeof sort === "string" ? sort : undefined} />}>
+    <Suspense fallback={<ShopFallback category={cat.slug} />}>
       <ShopView category={cat.slug} />
     </Suspense>
   );

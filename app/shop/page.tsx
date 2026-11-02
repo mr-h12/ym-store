@@ -7,14 +7,9 @@ export const metadata: Metadata = {
   description: "T-shirts, shirts, knitwear, trousers, outerwear and dresses.",
 };
 
-export default async function ShopPage({
-  searchParams,
-}: {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-}) {
-  const { sort } = await searchParams;
+export default function ShopPage() {
   return (
-    <Suspense fallback={<ShopFallback sort={typeof sort === "string" ? sort : undefined} />}>
+    <Suspense fallback={<ShopFallback />}>
       <ShopView />
     </Suspense>
   );
