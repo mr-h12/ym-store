@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens. Rules from the UI/UX notes:
+ * one flat accent (primary action + meaningful state only), no gradients,
+ * hairline borders instead of shadows, shadow only on floating UI,
+ * radius scales with element size (card 12 / input 8 / badge 6).
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f7f5f1;
+  --surface: #ffffff;
+  --surface-2: #efebe4;
+  --ink: #171614;
+  --muted: #6b675f;
+  --line: #e3ded5;
+  --accent: #1f3b2d;        /* deep forest – primary action */
+  --accent-ink: #ffffff;
+  --sale: #a33a22;          /* price reductions + errors only */
+  --ok: #2f6b45;
+  --scrim: rgb(10 10 9 / 0.7);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-sale: var(--sale);
+  --color-ok: var(--ok);
+  --color-scrim: var(--scrim);
+  --font-sans: var(--font-inter);
+  --radius-card: 12px;
+  --radius-input: 8px;
+  --radius-badge: 6px;
+  --shadow-float: 0 12px 32px -8px rgb(0 0 0 / 0.22), 0 2px 6px rgb(0 0 0 / 0.08);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html { -webkit-text-size-adjust: 100%; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Tabular figures for every price so columns line up. */
+.price { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Primary action: solid accent, full-width where it is THE action. */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  min-height: 44px; padding: 0 1.25rem; border-radius: var(--radius-input);
+  font-weight: 600; font-size: 15px; transition: background-color .15s, opacity .15s;
+}
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: color-mix(in srgb, var(--accent) 88%, black); }
+.btn-primary:disabled { opacity: .45; cursor: not-allowed; }
+.btn-secondary { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.btn-secondary:hover { background: var(--surface-2); }
+.link-quiet { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.link-quiet:hover { color: var(--ink); }
+
+/* Inputs: 16px on phones so iOS never zooms. */
+.field {
+  width: 100%; min-height: 48px; padding: .625rem .875rem;
+  border: 1px solid var(--line); border-radius: var(--radius-input);
+  background: var(--surface); font-size: 16px; color: var(--ink);
+}
+.field:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+
+.eyebrow { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+
+/* Touch targets: 44px on coarse pointers only; mouse layouts stay dense. */
+@media (pointer: coarse) {
+  .tap { min-height: 44px; min-width: 44px; }
+}
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Hide scrollbar on horizontal rails while keeping them scrollable. */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
