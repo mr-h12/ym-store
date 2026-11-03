@@ -47,6 +47,16 @@ The real Y&M STORE catalogue and contacts (from Instagram @y_m_storee and the Fa
 
 The layout uses logical CSS properties, so setting `dir: "rtl"` mirrors it for Arabic.
 
+## Docs
+
+- [`CLAUDE.md`](CLAUDE.md): rules for coding agents (and humans) working in this repo
+- [`docs/PROJECT.md`](docs/PROJECT.md): what we're building, every decision and why, open items
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): stack, folder structure, data model, flows, hosting
+- [`docs/MODULES.md`](docs/MODULES.md): the build plan, module by module, with a check for each point
+- [`docs/COMPLIANCE.md`](docs/COMPLIANCE.md): Egyptian consumer law, data protection (PDPL) and tax rules
+- [`docs/owner-questionnaire-ar.md`](docs/owner-questionnaire-ar.md): questions for the shop owner (Arabic)
+- [`research/f-launch-research.md`](research/f-launch-research.md): launch research (payments, shipping, stack, SEO, legal)
+
 ## Research
 
 - [`research/fashion-ecommerce-survey.md`](research/fashion-ecommerce-survey.md): combined ranking and the patterns we adopted
