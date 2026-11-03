@@ -60,6 +60,7 @@ D-01 to D-20 come from rounds 1-3 (§15 of the plan). D-21 and D-22 come from ro
 | D-31 | No job queue until e-receipts or Bosta arrive; then pg-boss | YAGNI: nothing in phase 1 needs background jobs | 2026-11-03 |
 | D-32 | Merged into D-19 (Umami runs as its own container in the compose stack) | Kept so later IDs stay stable | 2026-11-03 |
 | D-33 | Frankfurt (Hetzner) VPS kept as the documented fallback, same compose file | Use if the local server proves unreliable; needs the transfer permit for the DB too | 2026-11-03 |
+| D-34 | Static UI demo on Cloudflare Pages from `ym-redesign` (`STATIC_EXPORT=1 npm run build`, output `out/`), with a demo bar and `noindex` | Show the owner the design before the backend exists; free, commercial use allowed, a preview URL per branch, same Cloudflare account as the future Tunnel. Static export stops working once M1 adds the DB, so the demo is frozen on a `demo` branch then | 2026-11-03 |
 
 ## Open items
 

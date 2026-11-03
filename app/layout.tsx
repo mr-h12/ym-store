@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   description: "Designer menswear in Alexandria: Balmain, Calvin Klein, Armani, Hermès, Burberry and more. Same-day delivery in Alexandria, shipping to all of Egypt. Order on WhatsApp.",
   icons: { icon: "/brand/logo_704x705.jpg", apple: "/brand/logo_704x705.jpg" },
   openGraph: { images: ["/brand/cover_banner_1696x624.jpg"] },
+  ...(storeConfig.demo && { robots: { index: false, follow: false } }),
 };
 
 export const viewport: Viewport = {
@@ -34,6 +35,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:start-2 focus:top-2 focus:z-50 focus:bg-surface focus:p-2">
             Skip to content
           </a>
+          {storeConfig.demo && (
+            <p role="note" className="bg-silver px-4 py-2 text-center text-xs text-night">
+              Demo preview: prices and stock aren&apos;t final. Placing an order opens a real WhatsApp chat with the shop.
+              {" · "}<span lang="ar" dir="rtl" className="ar">نسخة تجريبية</span>
+            </p>
+          )}
           <p className="bg-night-2 px-4 py-2 text-center text-xs text-silver">
             {storeConfig.deliveryNote}
             <span lang="ar" dir="rtl" className="ar ms-2 hidden text-silver-muted sm:inline">· متاح شحن لجميع المحافظات</span>

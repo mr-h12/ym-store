@@ -27,4 +27,6 @@ export const storeConfig = {
   deliveryEstimate: "same day in Alexandria",
   deliveryNote: "Same-day delivery in Alexandria · Shipping to all governorates",
   payment: "Pay cash or Visa",
+  /** True in the static demo build: shows the demo bar and keeps search engines out. */
+  demo: process.env.STATIC_EXPORT === "1",
 } as const;
