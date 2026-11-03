@@ -16,6 +16,7 @@ import { isOnSale } from "./shop/filters";
 export function ProductCard({ product, priority = false }: { product: Product; priority?: boolean }) {
   const { add } = useCart();
   const [picking, setPicking] = useState(false);
+  const [hovered, setHovered] = useState(false);
   const shape = getCategory(product.category)!.shape;
   const first = product.colours[0];
   const onSale = isOnSale(product);
@@ -25,17 +26,27 @@ export function ProductCard({ product, priority = false }: { product: Product; p
   const extra = product.colours.length - shown.length;
 
   return (
-    <article className="group relative">
+    <article className="group relative" onPointerEnter={(e) => e.pointerType === "mouse" && setHovered(true)}>
       <Link href={`/product/${product.slug}`} className="block">
-        <div className="relative aspect-[3/4] overflow-hidden rounded-[var(--radius-card)] bg-white">
+        <div className="relative aspect-[3/4] overflow-hidden rounded-[var(--radius-card)] bg-white transition-transform duration-150 ease-out active:scale-[.98]">
           <ProductImage
             shape={shape}
             colour={first.hex}
             name={`${product.name} in ${first.name}`}
             src={product.images[0]}
             priority={priority}
-            className="transition-transform duration-300 group-hover:scale-[1.03]"
+            className="transition-transform duration-500 ease-out group-hover-fine:scale-[1.03]"
           />
+          {/* Back view on hover, mouse only; mounted on first hover so grids don't download every back photo. */}
+          {hovered && first.images[1] && (
+            <ProductImage
+              shape={shape}
+              colour={first.hex}
+              name=""
+              src={first.images[1]}
+              className="absolute inset-0 opacity-0 [transition:opacity_300ms_var(--ease-out),scale_500ms_var(--ease-out)] group-hover-fine:scale-[1.03] group-hover-fine:opacity-100 starting:opacity-0"
+            />
+          )}
           {badge && (
             <span className={`absolute start-2 top-2 rounded-[var(--radius-badge)] px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${badge === "Sale" ? "bg-sale text-white" : "bg-night text-silver"}`}>
               {badge}
@@ -74,7 +85,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
       </div>
 
       {picking && (
-        <div className="mt-2" role="group" aria-label={`Choose a size for ${product.name}`}>
+        <div className="mt-2 transition-[opacity,translate] duration-150 ease-out starting:-translate-y-1 starting:opacity-0" role="group" aria-label={`Choose a size for ${product.name}`}>
           <p className="mb-1.5 text-xs text-muted">Choose size · adds {first.name}</p>
           <div className="grid grid-cols-5 gap-1">
             {SIZES.map((s: Size) => {

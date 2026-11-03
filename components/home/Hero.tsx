@@ -40,12 +40,12 @@ export function Hero() {
         <div className="relative hidden aspect-[5/4] md:block" aria-hidden="true">
           <div className="absolute inset-y-0 start-0 w-[58%] overflow-hidden rounded-[var(--radius-card)] bg-white">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={back.images[0]} alt="" className="h-full w-full object-cover" />
+            <img src={back.images[0]} alt="" className="settle-in h-full w-full object-cover" />
           </div>
           <div className="absolute end-0 bottom-[-8%] w-[50%] rounded-[var(--radius-card)] bg-night p-2">
             <div className="aspect-[3/4] overflow-hidden rounded-[calc(var(--radius-card)-4px)] bg-white">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={front.images[0]} alt="" className="h-full w-full object-cover" />
+              <img src={front.images[0]} alt="" className="settle-in h-full w-full object-cover" style={{ animationDelay: "120ms" }} />
             </div>
           </div>
         </div>

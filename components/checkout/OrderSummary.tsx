@@ -51,7 +51,7 @@ export function OrderSummaryToggle(p: Props) {
             stroke="currentColor"
             strokeWidth="2"
             aria-hidden="true"
-            className={`transition-transform ${open ? "rotate-180" : ""}`}
+            className={`transition-transform duration-200 ease-out ${open ? "rotate-180" : ""}`}
           >
             <path d="M6 9l6 6 6-6" />
           </svg>

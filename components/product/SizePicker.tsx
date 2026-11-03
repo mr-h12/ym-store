@@ -58,7 +58,7 @@ export const SizePicker = forwardRef<
         })}
       </div>
       {error && (
-        <p id="size-error" className="mt-2 text-sm text-sale">Please choose a size</p>
+        <p id="size-error" className="mt-2 text-sm text-sale transition-[opacity,translate] duration-150 ease-out starting:-translate-y-0.5 starting:opacity-0">Please choose a size</p>
       )}
       {value && left > 0 && left <= 3 && (
         <p className="mt-2 text-sm text-muted">Only {left} left in {value}</p>

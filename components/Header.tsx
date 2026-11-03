@@ -65,8 +65,8 @@ export function Header() {
 
       {menu && (
         <div className="fixed inset-0 z-40 lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
-          <button className="absolute inset-0 bg-scrim" aria-label="Close menu" onClick={() => setMenu(false)} />
-          <div className="absolute inset-y-0 start-0 flex w-[82%] max-w-sm flex-col bg-surface text-ink shadow-[var(--shadow-float)]">
+          <button className="absolute inset-0 bg-scrim transition-opacity duration-200 ease-out starting:opacity-0" aria-label="Close menu" onClick={() => setMenu(false)} />
+          <div className="absolute inset-y-0 start-0 flex w-[82%] max-w-sm flex-col bg-surface text-ink shadow-[var(--shadow-float)] transition-transform duration-300 ease-drawer starting:-translate-x-full rtl:starting:translate-x-full">
             <div className="flex h-14 items-center justify-between border-b border-line px-4">
               <span className="display font-semibold">{storeConfig.name}</span>
               <button className="tap -me-2 px-2" aria-label="Close menu" onClick={() => setMenu(false)}>

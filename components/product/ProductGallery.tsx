@@ -83,7 +83,7 @@ export function ProductGallery({
                 onClick={() => goTo(i)}
                 aria-label={`Show ${LABELS[i] ?? `view ${i + 1}`}`}
                 aria-current={i === active}
-                className={`h-1.5 rounded-full transition-all ${i === active ? "w-5 bg-ink" : "w-1.5 bg-line"}`}
+                className={`h-1.5 rounded-full transition-colors duration-200 ease-out ${i === active ? "w-5 bg-ink" : "w-1.5 bg-line"}`}
               />
             ))}
           </div>

@@ -70,7 +70,7 @@ export function SizeGuideDialog({
         // Click on the scrim (the dialog element itself, outside the panel) closes.
         if (e.target === e.currentTarget) onClose();
       }}
-      className="fixed inset-x-0 bottom-0 top-auto m-0 max-h-[85dvh] w-full max-w-none overflow-y-auto rounded-t-[var(--radius-card)] bg-surface p-0 text-ink shadow-[var(--shadow-float)] backdrop:bg-scrim md:inset-0 md:m-auto md:max-w-lg md:rounded-[var(--radius-card)]"
+      className="sheet-dialog fixed inset-x-0 bottom-0 top-auto m-0 max-h-[85dvh] w-full max-w-none overflow-y-auto rounded-t-[var(--radius-card)] bg-surface p-0 text-ink shadow-[var(--shadow-float)] backdrop:bg-scrim md:inset-0 md:m-auto md:max-w-lg md:rounded-[var(--radius-card)]"
     >
       <div className="p-5 pb-[calc(1.25rem+env(safe-area-inset-bottom))] md:p-6">
         <div className="flex items-start justify-between gap-4">

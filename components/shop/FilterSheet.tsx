@@ -88,11 +88,11 @@ export function FilterSheet({
       <div
         aria-hidden="true"
         onClick={onClose}
-        className="absolute inset-0 bg-scrim transition-opacity duration-200 starting:opacity-0"
+        className="absolute inset-0 bg-scrim transition-opacity duration-200 ease-out starting:opacity-0"
       />
       <div
         ref={panelRef}
-        className="absolute inset-x-0 bottom-0 flex max-h-[88dvh] flex-col rounded-t-[var(--radius-card)] bg-surface shadow-[var(--shadow-float)] transition-transform duration-200 starting:translate-y-full md:inset-y-0 md:start-auto md:end-0 md:max-h-none md:w-[420px] md:rounded-none md:starting:translate-y-0 md:starting:translate-x-full md:rtl:starting:-translate-x-full"
+        className="absolute inset-x-0 bottom-0 flex max-h-[88dvh] flex-col rounded-t-[var(--radius-card)] bg-surface shadow-[var(--shadow-float)] transition-transform duration-300 ease-drawer starting:translate-y-full md:inset-y-0 md:start-auto md:end-0 md:max-h-none md:w-[420px] md:rounded-none md:starting:translate-y-0 md:starting:translate-x-full md:rtl:starting:-translate-x-full"
       >
         <div className="flex items-center justify-between border-b border-line px-4 py-3 md:px-6">
           <h2 id="filter-title" className="text-lg font-semibold">
@@ -191,11 +191,11 @@ function Group({
           {title}
           {count > 0 && <span className="ms-2 font-normal text-muted">({count})</span>}
         </span>
-        <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform duration-200 ease-out group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
           <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </summary>
-      <div className="pb-5">{children}</div>
+      <div className="settle pb-5">{children}</div>
     </details>
   );
 }

@@ -89,13 +89,13 @@ export function CartDrawer() {
         type="button"
         tabIndex={-1}
         aria-label="Close bag"
-        className="absolute inset-0 h-full w-full cursor-default bg-scrim"
+        className="absolute inset-0 h-full w-full cursor-default bg-scrim transition-opacity duration-200 ease-out starting:opacity-0"
         onClick={close}
       />
       <div
         ref={panelRef}
         tabIndex={-1}
-        className="absolute inset-y-0 end-0 flex w-full max-w-[420px] flex-col bg-surface shadow-[var(--shadow-float)] outline-none"
+        className="absolute inset-y-0 end-0 flex w-full max-w-[420px] flex-col bg-surface shadow-[var(--shadow-float)] outline-none transition-transform duration-300 ease-drawer starting:translate-x-full rtl:starting:-translate-x-full"
       >
         <div className="flex h-14 shrink-0 items-center justify-between border-b border-line px-4">
           <h2 id="cart-title" className="text-base font-semibold">

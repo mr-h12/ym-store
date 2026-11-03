@@ -24,7 +24,7 @@ export const Success = forwardRef<HTMLHeadingElement, { order: PlacedOrder }>(fu
   const d = order.details;
   return (
     <div className="mx-auto max-w-xl">
-      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-ink">
+      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-ink transition-[opacity,scale] duration-300 ease-out starting:scale-90 starting:opacity-0">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
           <path d="M5 12.5l4.5 4.5L19 7.5" />
         </svg>

@@ -25,7 +25,7 @@ export function WhatsAppFab() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Message us on WhatsApp"
-      className="fixed end-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-20 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-night shadow-[var(--shadow-float)] transition-transform hover:scale-105 active:scale-95"
+      className="fixed end-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-20 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-night shadow-[var(--shadow-float)] transition-transform duration-150 ease-out active:scale-[.97]"
     >
       <WhatsAppIcon className="h-7 w-7" />
     </a>

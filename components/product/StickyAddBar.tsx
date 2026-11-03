@@ -49,7 +49,7 @@ export function StickyAddBar({
     <div
       aria-hidden={!show}
       inert={!show}
-      className={`fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface pb-[env(safe-area-inset-bottom)] shadow-[var(--shadow-float)] transition-transform duration-200 md:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface pb-[env(safe-area-inset-bottom)] shadow-[var(--shadow-float)] transition-transform duration-300 ease-drawer md:hidden ${
         show ? "translate-y-0" : "translate-y-full"
       }`}
     >

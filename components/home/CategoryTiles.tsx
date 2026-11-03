@@ -15,7 +15,7 @@ export function CategoryTiles() {
           const items = productsIn(cat.slug);
           const first = items[0];
           return (
-            <li key={cat.slug}>
+            <li key={cat.slug} className="reveal">
               <Link href={`/shop/${cat.slug}`} className="group block">
                 <div aria-hidden="true" className="aspect-square overflow-hidden rounded-[var(--radius-card)] bg-white">
                   <ProductImage
@@ -23,7 +23,7 @@ export function CategoryTiles() {
                     colour={first?.colours[0].hex ?? "#ccc"}
                     name=""
                     src={first?.images[0]}
-                    className="transition-transform duration-300 group-hover:scale-[1.03]"
+                    className="transition-transform duration-500 ease-out group-hover-fine:scale-[1.03]"
                   />
                 </div>
                 <div className="mt-2 flex items-baseline justify-between gap-2">
@@ -34,7 +34,7 @@ export function CategoryTiles() {
             </li>
           );
         })}
-        <li>
+        <li className="reveal">
           <Link href="/shop" className="group flex aspect-square flex-col items-center justify-center gap-3 rounded-[var(--radius-card)] bg-night text-silver">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/brand/logo_704x705.jpg" alt="" className="h-1/2 w-1/2 object-contain" />
