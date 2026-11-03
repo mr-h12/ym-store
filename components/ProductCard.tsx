@@ -28,7 +28,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
   return (
     <article className="group relative" onPointerEnter={(e) => e.pointerType === "mouse" && setHovered(true)}>
       <Link href={`/product/${product.slug}`} className="block">
-        <div className="relative aspect-[3/4] overflow-hidden rounded-[var(--radius-card)] bg-white transition-transform duration-150 ease-out active:scale-[.98]">
+        <div className="relative aspect-[3/4] overflow-hidden rounded-[var(--radius-card)] border border-line bg-surface-2 transition-transform duration-150 ease-out active:scale-[.98]">
           <ProductImage
             shape={shape}
             colour={first.hex}
@@ -48,7 +48,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
             />
           )}
           {badge && (
-            <span className={`absolute start-2 top-2 rounded-[var(--radius-badge)] px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${badge === "Sale" ? "bg-sale text-white" : "bg-night text-silver"}`}>
+            <span className={`absolute start-2 top-2 rounded-[var(--radius-badge)] px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${badge === "Sale" ? "bg-sale text-white" : "bg-ink text-bg"}`}>
               {badge}
             </span>
           )}
@@ -57,7 +57,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
           {product.brand && <p className="brand-label">{product.brand}</p>}
           <h3 className="mt-0.5 text-sm leading-snug">{product.name}</h3>
           <p className="mt-0.5 flex flex-wrap items-baseline gap-x-1.5 text-sm font-semibold">
-            <span className={`price ${onSale ? "text-sale" : product.price ? "" : "font-normal text-muted"}`}>{formatPrice(product.price)}</span>
+            <span className={`price ${onSale ? "text-sale" : product.price ? "" : "font-normal text-muted"}`}>{product.price ? formatPrice(product.price) : "Ask for price"}</span>
             {onSale && (
               <span className="price text-xs font-normal text-muted line-through">
                 <span className="sr-only">Was </span>{formatPrice(product.compareAt!)}
@@ -67,21 +67,23 @@ export function ProductCard({ product, priority = false }: { product: Product; p
         </div>
       </Link>
 
-      <div className="mt-1.5 flex items-center justify-between">
+      <div className="mt-1.5 flex min-h-6 items-center justify-between">
         <ul className="flex items-center gap-1.5" aria-label={`Colours: ${product.colours.map((c) => c.name).join(", ")}`}>
           {shown.map((c) => (
             <li key={c.name} title={c.name} className="h-3.5 w-3.5 rounded-full border border-black/15" style={{ background: c.hex }} />
           ))}
           {extra > 0 && <li className="text-xs text-muted">+{extra}</li>}
         </ul>
-        <button
-          type="button"
-          onClick={() => setPicking((v) => !v)}
-          aria-expanded={picking}
-          className="tap -me-1 rounded-[var(--radius-input)] px-1 text-xs font-medium underline underline-offset-2"
-        >
-          {picking ? "Close" : "Quick add"}
-        </button>
+        {product.price > 0 && (
+          <button
+            type="button"
+            onClick={() => setPicking((v) => !v)}
+            aria-expanded={picking}
+            className="tap -me-1 rounded-[var(--radius-input)] px-1 text-xs font-medium underline underline-offset-2"
+          >
+            {picking ? "Close" : "Quick add"}
+          </button>
+        )}
       </div>
 
       {picking && (

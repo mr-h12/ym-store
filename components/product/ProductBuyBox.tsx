@@ -11,6 +11,7 @@ import { SizePicker } from "./SizePicker";
 import { SizeGuideDialog } from "./SizeGuideDialog";
 import { DeliveryInfo } from "./DeliveryInfo";
 import { StickyAddBar } from "./StickyAddBar";
+import { WhatsAppIcon } from "@/components/WhatsAppFab";
 
 export function ProductBuyBox({
   product,
@@ -30,11 +31,13 @@ export function ProductBuyBox({
   const [announce, setAnnounce] = useState("");
   const sizeRef = useRef<HTMLDivElement>(null);
   const addRef = useRef<HTMLButtonElement>(null);
+  const askRef = useRef<HTMLAnchorElement>(null);
   const closeGuide = useCallback(() => setGuideOpen(false), []);
 
   const onSale = isOnSale(product);
   const soldOut = Object.values(product.stock).every((n) => !n);
-  const price = formatPrice(product.price);
+  const hasPrice = product.price > 0;
+  const price = hasPrice ? formatPrice(product.price) : "Ask for price";
 
   function requireSize() {
     setSizeError(true);
@@ -80,7 +83,7 @@ export function ProductBuyBox({
               <span className="ms-2 text-sm font-medium text-sale">Save {formatPrice(product.compareAt! - product.price)}</span>
             </>
           ) : (
-            <span className={product.price ? "font-semibold" : "text-base text-muted"}>{price}</span>
+            <span className={hasPrice ? "font-semibold" : "text-base text-muted"}>{price}</span>
           )}
         </p>
       </div>
@@ -123,33 +126,52 @@ export function ProductBuyBox({
         error={sizeError}
       />
 
-      {/* Actions: one primary, one quiet alternative */}
+      {/* One main action. No price yet → WhatsApp is the action; with a price → Add to bag, WhatsApp as the quiet alternative. */}
       <div>
-        <button
-          ref={addRef}
-          type="button"
-          onClick={handleAdd}
-          disabled={soldOut}
-          aria-describedby={sizeError ? "size-error" : undefined}
-          className="btn btn-primary h-13 w-full text-base"
-        >
-          {soldOut ? "Sold out" : product.price ? <>Add to bag · <span className="price">{price}</span></> : "Add to bag"}
-        </button>
-        <a
-          href={whatsappHref(false)}
-          onClick={(e) => {
-            // Rebuild at click time so the message carries the current URL and choices.
-            e.currentTarget.href = whatsappHref(true);
-          }}
-          target="_blank"
-          rel="noreferrer"
-          className="btn btn-secondary mt-3 w-full"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z" />
-          </svg>
-          Ask price on WhatsApp
-        </a>
+        {hasPrice ? (
+          <button
+            ref={addRef}
+            type="button"
+            onClick={handleAdd}
+            disabled={soldOut}
+            aria-describedby={sizeError ? "size-error" : undefined}
+            className="btn btn-primary h-13 w-full text-base"
+          >
+            {soldOut ? "Sold out" : <>Add to bag · <span className="price">{price}</span></>}
+          </button>
+        ) : (
+          <a
+            ref={askRef}
+            href={whatsappHref(false)}
+            onClick={(e) => {
+              // Rebuild at click time so the message carries the current URL and choices.
+              e.currentTarget.href = whatsappHref(true);
+            }}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-whatsapp h-13 w-full text-base"
+          >
+            <WhatsAppIcon className="h-5 w-5" />
+            Ask price on WhatsApp
+          </a>
+        )}
+        {hasPrice ? (
+          <p className="mt-3 text-center text-sm">
+            <a
+              href={whatsappHref(false)}
+              onClick={(e) => {
+                e.currentTarget.href = whatsappHref(true);
+              }}
+              target="_blank"
+              rel="noreferrer"
+              className="link-quiet"
+            >
+              Or order on WhatsApp
+            </a>
+          </p>
+        ) : (
+          <p className="mt-3 text-center text-sm text-muted">We reply with the price and your size within minutes.</p>
+        )}
         <p aria-live="polite" role="status" className="sr-only">{announce}</p>
       </div>
 
@@ -160,13 +182,13 @@ export function ProductBuyBox({
       <SizeGuideDialog open={guideOpen} onClose={closeGuide} productName={product.name} shape={shape} fit={product.fit} />
 
       <StickyAddBar
-        target={addRef}
+        target={hasPrice ? addRef : askRef}
         name={product.name}
         price={<span className={`price font-semibold ${onSale ? "text-sale" : "text-ink"}`}>{price}</span>}
         detail={size ? `${colour.name}, ${size}` : colour.name}
-        label={soldOut ? "Sold out" : size ? "Add to bag" : "Select size"}
-        disabled={soldOut}
-        onAdd={handleAdd}
+        label={hasPrice ? (soldOut ? "Sold out" : size ? "Add to bag" : "Select size") : "Ask on WhatsApp"}
+        disabled={hasPrice && soldOut}
+        onAdd={hasPrice ? handleAdd : () => window.open(whatsappHref(true), "_blank", "noopener,noreferrer")}
       />
     </div>
   );

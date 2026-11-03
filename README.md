@@ -38,7 +38,7 @@ npm run build      # production build
 The real Y&M STORE catalogue and contacts (from Instagram @y_m_storee and the Facebook page, collected 2026-11-03):
 
 - `data/catalog.json`: 54 products built from the store's 2026 posts. One product = one post + item + brand, with each colourway's
-  front/back photos (`public/products/`, 112 photos). **Prices aren't published**: `"price": 0` shows "Price on WhatsApp".
+  front/back photos (`public/products/`, 112 photos). **Prices aren't published**: `"price": 0` shows "Ask for price" and makes "Ask price on WhatsApp" the only button.
   Type a number in EGP to show a price; the cart, checkout and WhatsApp message pick it up.
 - `data/products.ts`: categories, and **placeholder sizes** (S–XXL all available) until real stock is known.
 - `lib/store-config.ts`: address (Arabic + English), map, phones, WhatsApp number and group, Instagram, Facebook, Threads,
@@ -62,5 +62,5 @@ The layout uses logical CSS properties, so setting `dir: "rtl"` mirrors it for A
 - [`research/fashion-ecommerce-survey.md`](research/fashion-ecommerce-survey.md): combined ranking and the patterns we adopted
 - [`research/a-browse.md`](research/a-browse.md), [`research/b-pdp-checkout.md`](research/b-pdp-checkout.md) and
   [`research/c-evidence.md`](research/c-evidence.md): the detailed reports with sources
-- [`research/d-ym-redesign.md`](research/d-ym-redesign.md): black/metal palette, WhatsApp ordering, Egyptian delivery and payment, Arabic
+- [`research/d-ym-redesign.md`](research/d-ym-redesign.md): WhatsApp ordering, Egyptian delivery and payment, Arabic, and the chosen "Gallery White" look (§5)
 - [`docs/screenshots/`](docs/screenshots/): `ym-*` are the current design; the rest show the earlier demo

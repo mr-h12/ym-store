@@ -98,3 +98,32 @@ myself (WCAG 2.x formula).
   [Google Fonts](https://fonts.google.com/specimen/IBM+Plex+Sans+Arabic) · [Lemonade](https://lemonadedigitalmedia.com/en/free-arabic-fonts-every-designer-needs/)
 - **Sizing.** Arabic looks smaller at the same px. Set `:lang(ar){font-size:1.08em; line-height:1.7}` and never
   letter-space Arabic, because tracking breaks the joins between letters.
+
+---
+
+## 5. Chosen direction (2026-11-03): "Gallery White"
+
+The owner saw the black/silver build on a phone and rejected the look and the colours. Two research passes followed
+(premium multi-brand menswear stores, and logo/type/hero/FAB/accent handling). The findings, with the caveat that live
+pages were blocked and most claims rest on search excerpts:
+
+- None of the best-regarded multi-brand menswear stores (Mr Porter, END., SSENSE, Farfetch, Ounass, Level Shoes, Kith,
+  Aimé Leon Dore) uses a black page with silver or gold text. All use a white or off-white page, black type, a light grey
+  product tile and at most one accent. "Luxury is signalled by restraint." Black-and-gold reads cheap when overdone.
+- Brand name in small bold caps above a regular-weight product name is the standard card pattern on every reference store.
+- A glossy 3D JPG logo loses its detail at header size and dates the page; luxury labels flattened their logos for
+  screens. Keep the chrome artwork for the favicon, OG image, social posts and the contact banner.
+- Full-height dark text heroes on phones push products below the fold. Baymard: 33% of users start by scrolling the
+  home page for visual products. Cap the hero at about 40–55svh and show the first products above the fold.
+- WhatsApp green `#25D366` with white text is 1.98:1 (fails AA). A floating button must never cover links or sticky
+  bars; the old one overlapped "See all" and card corners.
+- Dark vs light backgrounds: no reliable evidence that dark converts better; readability research is a wash, and
+  white-background supplier packshots glow as bright blocks on dark pages.
+
+Four directions were mocked up with the real photos (Gallery White, Ink & Paper, Night Editorial, Warm Luxe); the
+owner chose **A, Gallery White**, a text wordmark instead of the logo image, no floating button, and "Ask price on
+WhatsApp" as the only button while a product has no price.
+
+Tokens now in `app/globals.css`: bg `#ffffff`, tile `#f4f4f4`, ink `#111111`, muted `#6e6e6e` (5.1:1 on white,
+4.6:1 on the tile), line `#e8e8e8`, sale `#b00020` (7.3:1), no accent (primary actions are black). Type: Inter only,
+IBM Plex Sans Arabic for Arabic snippets. The earlier §1 black/metal advice is superseded by this section.

@@ -56,7 +56,7 @@ export function ShopView({ category }: { category?: CategorySlug }) {
   return (
     <div className="mx-auto max-w-7xl px-4 pb-16 md:px-6">
       <div className="flex items-baseline gap-3 pt-6 md:pt-10">
-        <h1 className="display text-2xl font-semibold md:text-3xl">{title}</h1>
+        <h1 className="text-2xl font-semibold md:text-3xl">{title}</h1>
         <p className="text-sm text-muted" aria-live="polite">
           {itemsLabel(results.length)}
         </p>
@@ -200,7 +200,7 @@ export function ShopFallback({ category, sort }: { category?: CategorySlug; sort
   return (
     <div className="mx-auto max-w-7xl px-4 pb-16 md:px-6">
       <div className="flex items-baseline gap-3 pt-6 md:pt-10">
-        <h1 className="display text-2xl font-semibold md:text-3xl">
+        <h1 className="text-2xl font-semibold md:text-3xl">
           {category ? getCategory(category)!.name : "All products"}
         </h1>
         <p className="text-sm text-muted">{itemsLabel(items.length)}</p>

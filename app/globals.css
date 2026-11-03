@@ -1,26 +1,20 @@
 @import "tailwindcss";
 
 /*
- * Design tokens, taken from the Y&M logo: off-black with brushed-silver.
- * One flat accent (black) for primary actions; silver only on dark surfaces
- * (header, hero, footer). Cool grey family throughout, no gradients on UI.
- * Hairline borders instead of shadows; shadow only on floating UI.
+ * Design tokens: "Gallery White". White page, light grey product tiles,
+ * black ink, no accent colour (primary actions are black). Hairline borders
+ * instead of shadows; shadow only on floating UI. No gradients on UI.
  */
 :root {
-  --bg: #f6f7f8;
+  --bg: #ffffff;
   --surface: #ffffff;
-  --surface-2: #eceef1;
-  --ink: #0d0e10;
-  --muted: #5b616b;
-  --line: #e1e4e8;
-  --accent: #0d0e10;        /* primary action */
+  --surface-2: #f4f4f4;
+  --ink: #111111;
+  --muted: #6e6e6e;        /* 5.0:1 on white */
+  --line: #e8e8e8;
+  --accent: #111111;        /* primary action */
   --accent-ink: #ffffff;
-  --night: #0b0c0e;         /* header, hero, footer */
-  --night-2: #17191d;
-  --night-line: #2a2d33;
-  --silver: #c9ced6;        /* text/details on night only (11:1) */
-  --silver-muted: #8d949e;
-  --sale: #a33a22;          /* price reductions + errors only */
+  --sale: #b00020;          /* 7.3:1 on white: price reductions + errors only */
   --ok: #2f6b45;
   --scrim: rgb(10 10 9 / 0.7);
 }
@@ -34,16 +28,10 @@
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
-  --color-night: var(--night);
-  --color-night-2: var(--night-2);
-  --color-night-line: var(--night-line);
-  --color-silver: var(--silver);
-  --color-silver-muted: var(--silver-muted);
   --color-sale: var(--sale);
   --color-ok: var(--ok);
   --color-scrim: var(--scrim);
-  --font-sans: var(--font-jost);
-  --font-display: var(--font-cinzel);
+  --font-sans: var(--font-inter);
   --radius-card: 10px;
   --radius-input: 6px;
   --radius-badge: 4px;
@@ -64,17 +52,17 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-jost), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
 
-/* Display serif echoes the logo's wordmark. Headings only. */
-.display { font-family: var(--font-cinzel), Georgia, serif; letter-spacing: .02em; text-wrap: balance; }
-h1, h2 { text-wrap: balance; }
+h1, h2 { text-wrap: balance; letter-spacing: -0.01em; }
+/* Wordmark: the logo's lettering, set flat. */
+.wordmark { font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 
 /* Arabic snippets inside English copy. */
 .ar { font-family: var(--font-arabic), system-ui, sans-serif; font-size: 1.06em; line-height: 1.7; letter-spacing: 0; }
 
-.brand-label { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--muted); }
+.brand-label { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--ink); }
 
 /* Tabular figures for every price so columns line up. */
 .price { font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -83,7 +71,7 @@ h1, h2 { text-wrap: balance; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
   min-height: 44px; padding: 0 1.25rem; border-radius: var(--radius-input);
-  font-weight: 500; font-size: 15px; letter-spacing: .01em;
+  font-weight: 600; font-size: 15px;
   transition: background-color .15s var(--ease-out), opacity .15s var(--ease-out), transform .12s var(--ease-out);
 }
 .btn:active:not(:disabled) { transform: scale(.98); }
@@ -92,11 +80,9 @@ h1, h2 { text-wrap: balance; }
 .btn-primary:disabled { opacity: .45; cursor: not-allowed; }
 .btn-secondary { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
 .btn-secondary:hover { background: var(--surface-2); }
-/* Light button for night surfaces. */
-.btn-silver { background: var(--silver); color: var(--night); }
-.btn-silver:hover { background: #e3e6ea; }
-.btn-ghost-night { color: var(--silver); border: 1px solid var(--night-line); }
-.btn-ghost-night:hover { border-color: var(--silver-muted); }
+/* WhatsApp as THE action: same black as primary; the glyph says WhatsApp (green + white text fails contrast). */
+.btn-whatsapp { background: var(--accent); color: var(--accent-ink); }
+.btn-whatsapp:hover { background: color-mix(in srgb, var(--accent) 88%, black); }
 .link-quiet { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
 .link-quiet:hover { color: var(--ink); }
 

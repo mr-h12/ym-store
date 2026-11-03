@@ -1,52 +1,42 @@
 import Link from "next/link";
 import { getProduct } from "@/data/products";
-import { storeConfig } from "@/lib/store-config";
-import { WhatsAppIcon } from "@/components/WhatsAppFab";
 
-const FEATURED = ["y-3-leather-bomber-jacket", "valentino-sweatshirt"];
+const FEATURED = "y-3-leather-bomber-jacket";
 
-/** Night hero: one headline, one primary action, two real product shots (desktop). */
+/**
+ * Short hero: one real product photo, one headline, ONE action. On phones it
+ * stays under ~45% of the screen so the first products show above the fold.
+ */
 export function Hero() {
-  const [back, front] = FEATURED.map((slug) => getProduct(slug)!);
+  const featured = getProduct(FEATURED)!;
 
   return (
-    <section className="bg-night text-silver">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pt-10 pb-12 md:grid-cols-[1.1fr_1fr] md:px-6 md:py-20 lg:py-24">
-        <div>
-          <p className="text-xs tracking-[.2em] text-silver-muted uppercase">Alexandria · Your fashion dealer</p>
-          <h1 className="display mt-4 text-[2.1rem] leading-[1.08] font-semibold text-white md:text-5xl lg:text-[3.6rem]">
-            Designer menswear, picked for Alexandria.
-          </h1>
-          <p className="mt-4 max-w-md text-base leading-relaxed text-silver-muted md:mt-6 md:text-lg">
-            Balmain, Calvin Klein, Armani, Hermès, Burberry and more. Order on WhatsApp and get it the same day in
-            Alexandria.
-          </p>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-9">
-            <Link href="/shop" className="btn btn-silver w-full sm:w-auto sm:px-8">
-              Shop the collection
-            </Link>
-            <a
-              href={`https://wa.me/${storeConfig.whatsapp}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-ghost-night w-full sm:w-auto"
-            >
-              <WhatsAppIcon className="h-5 w-5" /> {storeConfig.phones[0]}
-            </a>
-          </div>
+    <section className="border-b border-line bg-surface-2">
+      <div className="mx-auto grid max-w-7xl md:grid-cols-2 md:items-center md:gap-10 md:px-6">
+        {/* Photo first on phones (fills the top), second on desktop (end side). */}
+        <div className="relative h-[40svh] max-h-[400px] min-h-[240px] overflow-hidden md:order-2 md:aspect-[4/5] md:h-auto md:max-h-none md:rounded-[var(--radius-card)]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={featured.images[0]}
+            alt={`${featured.name}, new in`}
+            fetchPriority="high"
+            className="settle-in h-full w-full object-cover object-[50%_18%]"
+          />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-surface-2 to-transparent md:hidden" aria-hidden="true" />
         </div>
 
-        {/* Two overlapping real photos; desktop only so products stay near the top on phones. */}
-        <div className="relative hidden aspect-[5/4] md:block" aria-hidden="true">
-          <div className="absolute inset-y-0 start-0 w-[58%] overflow-hidden rounded-[var(--radius-card)] bg-white">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={back.images[0]} alt="" className="settle-in h-full w-full object-cover" />
-          </div>
-          <div className="absolute end-0 bottom-[-8%] w-[50%] rounded-[var(--radius-card)] bg-night p-2">
-            <div className="aspect-[3/4] overflow-hidden rounded-[calc(var(--radius-card)-4px)] bg-white">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={front.images[0]} alt="" className="settle-in h-full w-full object-cover" style={{ animationDelay: "120ms" }} />
-            </div>
+        <div className="px-4 pt-1 pb-6 md:order-1 md:px-0 md:py-20 lg:py-24">
+          <p className="eyebrow">Same-day delivery in Alexandria</p>
+          <h1 className="mt-2 text-[1.9rem] leading-[1.1] font-semibold md:mt-4 md:text-5xl lg:text-[3.4rem]">
+            Designer menswear in Alexandria
+          </h1>
+          <p className="mt-2 max-w-md text-base leading-relaxed text-muted md:mt-5 md:text-lg">
+            Balmain, Armani, Hermès, Burberry and more. <span className="hidden md:inline">Order on WhatsApp, pay cash or Visa on delivery.</span>
+          </p>
+          <div className="mt-4 md:mt-8">
+            <Link href="/shop?sort=newest" className="btn btn-primary w-full sm:w-auto sm:px-10">
+              Shop new in
+            </Link>
           </div>
         </div>
       </div>

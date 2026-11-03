@@ -10,7 +10,7 @@ export function BrandRow() {
         <ul className="no-scrollbar -me-4 flex gap-5 overflow-x-auto pe-4 md:-me-6 md:pe-6">
           {BRANDS.filter((b) => b !== "Other").map((b) => (
             <li key={b} className="shrink-0">
-              <Link href={`/shop?brand=${encodeURIComponent(b)}`} className="display text-sm font-medium whitespace-nowrap text-ink/80 hover:text-ink">
+              <Link href={`/shop?brand=${encodeURIComponent(b)}`} className="brand-label whitespace-nowrap hover:underline underline-offset-4">
                 {b}
               </Link>
             </li>

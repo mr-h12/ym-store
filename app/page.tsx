@@ -24,7 +24,7 @@ export default function Home() {
         <TrustStrip />
         <section aria-labelledby="tees-title" className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="mb-5 flex items-end justify-between gap-4">
-            <h2 id="tees-title" className="display text-xl font-semibold md:text-2xl">
+            <h2 id="tees-title" className="text-xl font-semibold md:text-2xl">
               Designer tees
             </h2>
             <Link href="/shop/t-shirts" className="text-sm font-medium underline underline-offset-4">
